@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://t123456ll.github.io/LeetCode-100-the-same-tree.html</loc>
+    
+    <lastmod>2019-07-05T20:40:19.715Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://t123456ll.github.io/categories/index.html</loc>
+    
+    <lastmod>2019-07-05T20:32:28.585Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://t123456ll.github.io/about/index.html</loc>
     
     <lastmod>2019-07-05T05:49:18.548Z</lastmod>
@@ -23,21 +37,7 @@
   </url>
   
   <url>
-    <loc>https://t123456ll.github.io/2019/07/04/LeetCode-100-the-same-tree/</loc>
-    
-    <lastmod>2019-07-05T05:23:57.309Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://t123456ll.github.io/categories/index.html</loc>
-    
-    <lastmod>2019-07-05T01:05:01.769Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://t123456ll.github.io/2019/07/04/Hello-My-World/</loc>
+    <loc>https://t123456ll.github.io/Hello-My-World.html</loc>
     
     <lastmod>2019-07-05T00:42:08.567Z</lastmod>
     
