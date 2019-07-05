@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="LeetCode,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="人有两个宝，双手和大脑。">
-<meta name="keywords" content="田烁琳">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Pia&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Question: hereGiven two binary trees, write a function to check if they are the same or not.Two binary trees are considered the same if they are structurally identical and the nodes have the same valu">
+<meta name="keywords" content="LeetCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode 100.the same tree">
+<meta property="og:url" content="http://yoursite.com/2019/07/04/LeetCode-100-the-same-tree/index.html">
 <meta property="og:site_name" content="Pia&#39;s Blog">
-<meta property="og:description" content="人有两个宝，双手和大脑。">
+<meta property="og:description" content="Question: hereGiven two binary trees, write a function to check if they are the same or not.Two binary trees are considered the same if they are structurally identical and the nodes have the same valu">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-05T05:23:57.309Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pia&#39;s Blog">
-<meta name="twitter:description" content="人有两个宝，双手和大脑。">
+<meta name="twitter:title" content="LeetCode 100.the same tree">
+<meta name="twitter:description" content="Question: hereGiven two binary trees, write a function to check if they are the same or not.Two binary trees are considered the same if they are structurally identical and the nodes have the same valu">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/04/LeetCode-100-the-same-tree/">
 
 
 
 
 
-  <title>Pia's Blog</title>
+  <title>LeetCode 100.the same tree | Pia's Blog</title>
   
 
 
@@ -144,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -248,9 +248,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -280,9 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/04/LeetCode-100-the-same-tree/" itemprop="url">LeetCode 100.the same tree</a></h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode 100.the same tree</h1>
         
 
         <div class="post-meta">
@@ -332,16 +330,34 @@
       
 
       
-        
-          <h1 id="Question-here"><a href="#Question-here" class="headerlink" title="Question: here"></a>Question: <a href="https://leetcode.com/problems/same-tree/" target="_blank" rel="noopener">here</a></h1><p>Given two binary trees, write a function to check if they are the same or not.<br>Two binary trees are considered the same if they are structurally identical and the nodes have the same value.<br>总而言之，就是判断两颗二叉树是否一模一样。左右枝哪怕数字一样顺序不一样都是不行的。<br>It is my first time to use recursion to solve a question, So i will use most of content to explain how to writer a good recursion.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/04/LeetCode-100-the-same-tree/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h1 id="Question-here"><a href="#Question-here" class="headerlink" title="Question: here"></a>Question: <a href="https://leetcode.com/problems/same-tree/" target="_blank" rel="noopener">here</a></h1><p>Given two binary trees, write a function to check if they are the same or not.<br>Two binary trees are considered the same if they are structurally identical and the nodes have the same value.<br>总而言之，就是判断两颗二叉树是否一模一样。左右枝哪怕数字一样顺序不一样都是不行的。<br>It is my first time to use recursion to solve a question, So i will use most of content to explain how to writer a good recursion.</p>
+<a id="more"></a>
+<h1 id="Solution-Recursion-递归"><a href="#Solution-Recursion-递归" class="headerlink" title="Solution: Recursion (递归)"></a>Solution: Recursion (递归)</h1><p><a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)" target="_blank" rel="noopener">What’s recursion?</a> From wiki we noticed that recursion is different from <a href="https://en.wikipedia.org/wiki/Iteration#Computing" target="_blank" rel="noopener">iteration(迭代)</a> which repeats a process instead of function to generate the output.</p>
+<p>There are two main parts of recursion: the end point (recursive exit, logical boundary) and the own call part (recursive expression, regular, etc.)</p>
+<p>When write a recursive algorithm, three aspects need to be paid attention: </p>
+<ul>
+<li>Extract the repetitive logic. </li>
+<li>Appropriate exit conditions. </li>
+<li>Control the logical boundaries.</li>
+</ul>
+<p>End point: (I usually write the end point first, because it is easier to think and write)</p>
+<ul>
+<li>Appropriate exit conditions: Find a different node, return 0</li>
+<li>Control logic boundaries: Return 1 when both binary trees are empty, that is, recursively to the leaf node.</li>
+</ul>
+<p>The own call part:</p>
+<ul>
+<li>Extract the repeating logic: The repetition logic of this problem is obvious, that is, to determine whether the values of each node are equal. <code>p.val = q.val</code></li>
+</ul>
+<h2 id="When-to-use-this-part"><a href="#When-to-use-this-part" class="headerlink" title="When to use this part:"></a><strong>When</strong> to use this part:</h2><p>Of course, it must be not reaching to end point. However, this question cannot be considered only in addition to the recursive end point, because this question needs to compare the val of the node. So NoneType object (leaf node) needs to be excluded.<br>    <code>if (p.val == q.val) and p and q:</code><br>Otherwise, <strong>Line 21: AttributeError: ‘NoneType’ object has no attribute ‘val’</strong></p>
+<p>Then you may have a doubt, we have already considered it when controlling the logical boundaries, why consider it again? It should be noted that previously, we considered the senario that two binary trees are empty at the same time. But when one is empty and the other has value, it is easy to encounter a bug. such as the testcase like this: <code>[1,2] [1,null,2]</code><br>What I want to point out that <code>if p and q and (p.val == q.val)</code> this judgment statement is also very clever, because you must pay attention to the order of judgment, such as writing <code>if (p.val == q.val) and p and q:</code>will report an error. <strong>DO YOU KNOW WHY?</strong></p>
+<h2 id="How-to-calculate-this-part"><a href="#How-to-calculate-this-part" class="headerlink" title="How to calculate this part:"></a><strong>How</strong> to calculate this part:</h2><p>When the node values of the two trees are the same, you can recursively judge their nodes, and record the judgment result of the child nodes.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (p.val == q.val) and p and q: </span><br><span class="line">    result = self.same(p.left, q.left) and self.same(p.right, q.right)</span><br><span class="line">    return result</span><br></pre></td></tr></table></figure>
+
+<h2 id="What-to-returns"><a href="#What-to-returns" class="headerlink" title="What to returns:"></a><strong>What</strong> to returns:</h2><p>Return 1: when both binary trees are empty, in other words, reach to the leaf node<br>Return 0: when the nodes are different<br>Return result: Using <code>and</code> to combine tow results from the left and right sides.</p>
+<h1 id="Final-code"><a href="#Final-code" class="headerlink" title="Final code:"></a>Final code:</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def isSameTree(self, p, q):</span><br><span class="line">        return self.same(p, q)</span><br><span class="line">        </span><br><span class="line">    def same(self, p, q):</span><br><span class="line">        if not p and not q:</span><br><span class="line">            return 1</span><br><span class="line"></span><br><span class="line">        if (p.val == q.val) and p and q: </span><br><span class="line">            result = self.same(p.left, q.left) and self.same(p.right, q.right)</span><br><span class="line">            return result</span><br><span class="line"></span><br><span class="line">        else:</span><br><span class="line">            return 0</span><br><span class="line"></span><br><span class="line">        return result</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -351,140 +367,70 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>No pay No gain. 我一份耕耘，你一份收获</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Shuolin Tian WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Shuolin Tian Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/04/Hello-My-World/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shuolin Tian">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Pia's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/04/Hello-My-World/" itemprop="url">Hello, My World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-04T19:25:22-04:00">
-                2019-07-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img src="https://imgur.com/2Ws9fLk.jpg" alt></p>
-<h2 id="这是属于我的世界"><a href="#这是属于我的世界" class="headerlink" title="这是属于我的世界"></a>这是属于我的世界</h2><p>某天晚上和同学聊天，突然意识到拥有一个技术Blog应该是程序员的基本素养，所以废寝忘食，披星戴月（并没有）地弄了一个。身为拖延症晚期，懒癌晚期的咸鱼一条，竟然在搭建自己博客的时候感受无与伦比的成就感，冥冥之中觉得自己应该能坚持更新（先立个flag）说不定以后会自己写一个Hexo主题（另一个flag）<br>介绍一下自己，小Pia同学，新晋程序媛一枚。通信转来写代码，非学院派，谷歌自学ing。🇨🇦研究生在读。本博客用来记录学习笔记和分享日常生活，毕竟父母亲戚朋友肯定搜不到这个网站，所以应该也会用肆意来吐槽（坏笑）<br>出于以后找工作考虑，学习笔记部分应该会首选英文或中英结合？其他部分就比较随意。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/04/Hello-My-World/" rel="next" title="Hello, My World">
+                <i class="fa fa-chevron-left"></i> Hello, My World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -494,10 +440,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -505,6 +452,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -525,8 +476,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -607,6 +567,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Question-here"><span class="nav-number">1.</span> <span class="nav-text">Question: here</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-Recursion-递归"><span class="nav-number">2.</span> <span class="nav-text">Solution: Recursion (递归)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#When-to-use-this-part"><span class="nav-number">2.1.</span> <span class="nav-text">When to use this part:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-calculate-this-part"><span class="nav-number">2.2.</span> <span class="nav-text">How to calculate this part:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-to-returns"><span class="nav-number">2.3.</span> <span class="nav-text">What to returns:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Final-code"><span class="nav-number">3.</span> <span class="nav-text">Final code:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -754,6 +730,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
