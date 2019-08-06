@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Question: hereA binary tree is univalued if every node in the tree has the same value.Return true if and only if the given tree is univalued.简而言之，判断问二叉树的每个节点的值是不是都是一样的。 Example:Input: [1,1,1,1,1,null,">
+<meta name="description" content="Question: hereGiven a list of daily temperatures T, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature. If there is no future">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-965-Univalued-Binary-Tree">
-<meta property="og:url" content="https://t123456ll.github.io/LeetCode-965-Univalued-Binary-Tree.html">
+<meta property="og:title" content="LeetCode-739-Daily-Temperature">
+<meta property="og:url" content="https://t123456ll.github.io/LeetCode-739-Daily-Temperature.html">
 <meta property="og:site_name" content="Shuolin&#39;s Blog">
-<meta property="og:description" content="Question: hereA binary tree is univalued if every node in the tree has the same value.Return true if and only if the given tree is univalued.简而言之，判断问二叉树的每个节点的值是不是都是一样的。 Example:Input: [1,1,1,1,1,null,">
+<meta property="og:description" content="Question: hereGiven a list of daily temperatures T, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature. If there is no future">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-06T15:28:10.519Z">
+<meta property="og:updated_time" content="2019-08-06T16:04:42.953Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode-965-Univalued-Binary-Tree">
-<meta name="twitter:description" content="Question: hereA binary tree is univalued if every node in the tree has the same value.Return true if and only if the given tree is univalued.简而言之，判断问二叉树的每个节点的值是不是都是一样的。 Example:Input: [1,1,1,1,1,null,">
+<meta name="twitter:title" content="LeetCode-739-Daily-Temperature">
+<meta name="twitter:description" content="Question: hereGiven a list of daily temperatures T, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature. If there is no future">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://t123456ll.github.io/LeetCode-965-Univalued-Binary-Tree.html">
+  <link rel="canonical" href="https://t123456ll.github.io/LeetCode-739-Daily-Temperature.html">
 
 
 
 
 
-  <title>LeetCode-965-Univalued-Binary-Tree | Shuolin's Blog</title>
+  <title>LeetCode-739-Daily-Temperature | Shuolin's Blog</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/LeetCode-965-Univalued-Binary-Tree.html">
+    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/LeetCode-739-Daily-Temperature.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shuolin Tian">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode-965-Univalued-Binary-Tree</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode-739-Daily-Temperature</h1>
         
 
         <div class="post-meta">
@@ -365,34 +365,29 @@
       
 
       
-        <h1 id="Question-here"><a href="#Question-here" class="headerlink" title="Question: here"></a>Question: <a href="https://leetcode.com/problems/univalued-binary-tree/" target="_blank" rel="noopener">here</a></h1><p>A binary tree is univalued if every node in the tree has the same value.<br>Return true if and only if the given tree is univalued.<br>简而言之，判断问二叉树的每个节点的值是不是都是一样的。</p>
+        <h1 id="Question-here"><a href="#Question-here" class="headerlink" title="Question: here"></a>Question: <a href="https://leetcode.com/problems/daily-temperatures/" target="_blank" rel="noopener">here</a></h1><p>Given a list of daily temperatures T, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead.</p>
+<p>For example, given the list of temperatures T = [73, 74, 75, 71, 69, 72, 76, 73], your output should be [1, 1, 4, 2, 1, 1, 0, 0].</p>
+<p>Note: The length of temperatures will be in the range [1, 30000]. Each temperature will be an integer in the range [30, 100].<br>简而言之，判断过几天天气才能回暖。</p>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p>Input: [1,1,1,1,1,null,1]<br>Output: true<br>这题和上次的100很像，但100是比较两个二叉树的，这题是比较自身的值是否一致。所以大致思路会延续上次100，但会有细微不同。</p>
 <a id="more"></a>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h1><p>这一篇是当时接着100写的，也算是刚入leetcode坑时代码讲解之一。所以写的很细，也会指出一些新手（自己）常犯的错误。</p>
-<h2 id="递归-Recursion"><a href="#递归-Recursion" class="headerlink" title="递归 Recursion"></a>递归 Recursion</h2><p>当使用递归刷题时，就不可避免的会用到函数的互相调用，<a href="https://blog.csdn.net/CLHugh/article/details/75000104" target="_blank" rel="noopener">这里</a>是是讲class内部函数调用的，可以看看</p>
-<p><strong>递归有两大部分：终点（递归出口，逻辑边界）和自身调用部分（递归表达式，规律等）<br>写好一个递归算法要把握三个方面：1.提取重复逻辑 2.合适的退出条件3.控制逻辑边界。</strong><br>（copy上次的，拿过来再强调一下）</p>
-<h3 id="终点："><a href="#终点：" class="headerlink" title="终点："></a>终点：</h3><ol>
-<li>合适的退出条件：<br>发现左支或右支与当前节点的值不同，return 0<br>注意： 这里自己写很容易写错成（root.val != root.right）,思考题：为什么这样写是不对的？正确答案应该怎么写？<br>答案：正确写法：（root.val != root.right.val）<br>root.right是右支，而不是右支节点值。root.val 肯定是一直都不会等于root.right的，即treeNode != val。</li>
-<li>控制逻辑边界<br>当两个二叉树都为空时，即递归到了叶子结点时，return 1。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> root: <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h1><p>首先一看到题目大家想到的方法肯定是遍历，套两层循环暴力搜索气温升高的那天，然后坐标相减得出结果。但是注意Note里面说了可能会有30000天的温度，所以这条路就被否决掉了。但是这并不代表遍历不行，转换角度从温度进行遍历就会快很多。详细可参考<a href="https://blog.csdn.net/fuxuemingzhu/article/details/79285081" target="_blank" rel="noopener">这个微博</a></p>
+<p>但是作为一个优雅的程序员，光写这种代码肯定是不行的。所以今天我们就要用堆栈stack来解决这道题。</p>
+<p>其实要我自己写我肯定也想不到要用堆栈，但是看完别人的代码后就发现用堆栈还是有一定道理的。堆栈的先进后出和pop功能可以有效的再只遍历一次的情况下得到结果。</p>
+<h2 id="堆栈-stack"><a href="#堆栈-stack" class="headerlink" title="堆栈 stack"></a>堆栈 stack</h2><p>我们以题目中给出的例子为例来讲解：[73, 74, 75, 71, 69, 72, 76, 73]。<br>我们定义一个空栈和全零的output list，然后在用for循环遍历温度的时候分别做如下处理：</p>
+<ol>
+<li><p>如果第二天的温度比当天的低，那么我们暂时还无法确定需要等多少天才能有更高的温度，所以就将当天的温度入栈</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stack.append(i)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果第二天温度比当天的高，那么它需要等待的天数就是1（如当t=74，栈顶元素为73时）。此时我们需要更新栈顶元素对应的那天的等待时间，把结果放进output list里。即当t=74，栈顶元素为73时，其对应结果为1（output[cur] = i-cur），此时由于73已经找到结果，所以要被pop出；当t=75的时候同理</p>
 </li>
 </ol>
-<h3 id="自身调用部分："><a href="#自身调用部分：" class="headerlink" title="自身调用部分："></a>自身调用部分：</h3><ol start="3">
-<li>提取重复逻辑：<br>这题的重复逻辑就是不断的判断左支或右支与当前节点的值是否相同，因为该逻辑可以直接写在if的判断语句中，所以当if判断完成后直接就是return，中间没有额外的计算操作。</li>
-</ol>
-<p><strong>所以这一题的重点就是在与如何写if判断语句，也就是下面的when</strong></p>
-<p><strong>When何时用这部分</strong>:我觉得要是理不清怎么写，一定要先把左支和右支分开写，至少条理会清楚点。If判断语句也不要写太长。我当时第一次左右放一起写就导致忘记某些特殊case。<br>错误示范： </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> root.left <span class="keyword">and</span> root.right <span class="keyword">and</span> (root.left.val != root.val <span class="keyword">or</span> root.right.val != root.val):</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<p>当t=71时，由于71&lt;75 情况1），所以我们将75入栈（此时栈内元素为75）。<br>当t=69时，由于69&lt;71 情况1），71也同理入栈（此时栈内元素为75,71）。<br>当t=72时，由于69&lt;72 情况2），所以69的对应结果为1且69找到答案被pop出栈。当前栈顶元素为71，然后71&lt;72，所以此时可以修改71对应的等待天数，即为72对应的天数索引与71对应的天数索引，然后71出栈（此时栈内元素为75）；<br>当t=76时，由于71&lt;76 情况2），结果为1，但是同时由于76大于栈顶元素75，所以修改75的等待天数，并出栈（此时栈内为空）。<br>当t=73时，由于76&gt;73 情况1）76需入栈。由于再也没有比76大的元素，并且73之后也没有元素了，所以76，73对应的等待天数就都为0了，在程序中并没有做处理。</p>
+<p><strong>注</strong>：使用enumerate可以同时获得下标i和温度t。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for i, t in enumerate(T):</span><br></pre></td></tr></table></figure>
 
-<p>正确示范：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> root.right <span class="keyword">and</span> root.val != root.right.val:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"><span class="keyword">if</span> root.left <span class="keyword">and</span> root.val != root.left.val:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+<p>算法的空间复杂度为O(n)，时间复杂度也为O(n)，这是因为for循环里面的while循环中，每个元素最多出一次栈，所以while总的执行次数是O(n)量级的。</p>
+<h1 id="Final-Code"><a href="#Final-Code" class="headerlink" title="Final Code"></a>Final Code</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dailyTemperatures</span><span class="params">(self, T)</span>:</span></span><br><span class="line">        output = [<span class="number">0</span>] * len(T)</span><br><span class="line">        stack = []</span><br><span class="line">        <span class="keyword">for</span> i, t <span class="keyword">in</span> enumerate(T):</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> stack <span class="keyword">and</span> T[stack[<span class="number">-1</span>]] &lt; t:</span><br><span class="line">                cur = stack.pop()</span><br><span class="line">                output[cur] = i-cur</span><br><span class="line"></span><br><span class="line">            stack.append(i)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure>
 
-<p>何时对自身进行调用：即不是叶子结点，也没有遇到不同值时，也就是else</p>
-<p><strong>How这部分怎么计算</strong>: 基本没什么计算部分，省略</p>
-<p><strong>What返回什么</strong>:<br>return 1: 当递归到了叶子结点时<br>return 0:值不一样时<br>return result: 用and逻辑连接左右两支的递归返回结果。</p>
-<h1 id="Final-Code"><a href="#Final-Code" class="headerlink" title="Final Code"></a>Final Code</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isUnivalTree</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">return</span> self.univalued(root)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">univalued</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root: <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">and</span> root.val != root.left.val:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> root.right <span class="keyword">and</span> root.val != root.right.val:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            result = self.univalued(root.left) <span class="keyword">and</span> self.univalued(root.right)</span><br><span class="line">            <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
-
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://blog.csdn.net/fuxuemingzhu/article/details/85385974#_46" target="_blank" rel="noopener">这里</a>和<a href="https://blog.csdn.net/chlele0105/article/details/38759593" target="_blank" rel="noopener">这里</a>是用BFS和DFS解决二叉树问题</p>
 
       
     </div>
@@ -452,8 +447,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/LeetCode-144-Binary-Tree-Preorder-Traversal.html" rel="next" title="LeetCode 144.Binary Tree Preorder Traversal">
-                <i class="fa fa-chevron-left"></i> LeetCode 144.Binary Tree Preorder Traversal
+              <a href="/LeetCode-965-Univalued-Binary-Tree.html" rel="next" title="LeetCode-965-Univalued-Binary-Tree">
+                <i class="fa fa-chevron-left"></i> LeetCode-965-Univalued-Binary-Tree
               </a>
             
           </div>
@@ -461,10 +456,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/LeetCode-739-Daily-Temperature.html" rel="prev" title="LeetCode-739-Daily-Temperature">
-                LeetCode-739-Daily-Temperature <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -616,7 +607,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Question-here"><span class="nav-number">1.</span> <span class="nav-text">Question: here</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">1.1.</span> <span class="nav-text">Example:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#递归-Recursion"><span class="nav-number">2.1.</span> <span class="nav-text">递归 Recursion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#终点："><span class="nav-number">2.1.1.</span> <span class="nav-text">终点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自身调用部分："><span class="nav-number">2.1.2.</span> <span class="nav-text">自身调用部分：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Final-Code"><span class="nav-number">3.</span> <span class="nav-text">Final Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Question-here"><span class="nav-number">1.</span> <span class="nav-text">Question: here</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">1.1.</span> <span class="nav-text">Example:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#堆栈-stack"><span class="nav-number">2.1.</span> <span class="nav-text">堆栈 stack</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Final-Code"><span class="nav-number">3.</span> <span class="nav-text">Final Code</span></a></li></ol></div>
             
 
           </div>
