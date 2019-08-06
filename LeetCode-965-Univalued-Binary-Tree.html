@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Question: hereGiven two binary trees, write a function to check if they are the same or not.Two binary trees are considered the same if they are structurally identical and the nodes have the same valu">
+<meta name="description" content="Question: hereA binary tree is univalued if every node in the tree has the same value.Return true if and only if the given tree is univalued.简而言之，判断问二叉树的每个节点的值是不是都是一样的。 Example:Input: [1,1,1,1,1,null,">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 100.the same tree">
-<meta property="og:url" content="https://t123456ll.github.io/LeetCode-100-the-same-tree.html">
+<meta property="og:title" content="LeetCode-965-Univalued-Binary-Tree">
+<meta property="og:url" content="https://t123456ll.github.io/LeetCode-965-Univalued-Binary-Tree.html">
 <meta property="og:site_name" content="Shuolin&#39;s Blog">
-<meta property="og:description" content="Question: hereGiven two binary trees, write a function to check if they are the same or not.Two binary trees are considered the same if they are structurally identical and the nodes have the same valu">
+<meta property="og:description" content="Question: hereA binary tree is univalued if every node in the tree has the same value.Return true if and only if the given tree is univalued.简而言之，判断问二叉树的每个节点的值是不是都是一样的。 Example:Input: [1,1,1,1,1,null,">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-06T15:12:04.788Z">
+<meta property="og:updated_time" content="2019-08-06T15:25:51.068Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 100.the same tree">
-<meta name="twitter:description" content="Question: hereGiven two binary trees, write a function to check if they are the same or not.Two binary trees are considered the same if they are structurally identical and the nodes have the same valu">
+<meta name="twitter:title" content="LeetCode-965-Univalued-Binary-Tree">
+<meta name="twitter:description" content="Question: hereA binary tree is univalued if every node in the tree has the same value.Return true if and only if the given tree is univalued.简而言之，判断问二叉树的每个节点的值是不是都是一样的。 Example:Input: [1,1,1,1,1,null,">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://t123456ll.github.io/LeetCode-100-the-same-tree.html">
+  <link rel="canonical" href="https://t123456ll.github.io/LeetCode-965-Univalued-Binary-Tree.html">
 
 
 
 
 
-  <title>LeetCode 100.the same tree | Shuolin's Blog</title>
+  <title>LeetCode-965-Univalued-Binary-Tree | Shuolin's Blog</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/LeetCode-100-the-same-tree.html">
+    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/LeetCode-965-Univalued-Binary-Tree.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shuolin Tian">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode 100.the same tree</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode-965-Univalued-Binary-Tree</h1>
         
 
         <div class="post-meta">
@@ -322,8 +322,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-04T23:55:59-04:00">
-                2019-07-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-06T10:54:06-04:00">
+                2019-08-06
               </time>
             
 
@@ -365,33 +365,34 @@
       
 
       
-        <h1 id="Question-here"><a href="#Question-here" class="headerlink" title="Question: here"></a>Question: <a href="https://leetcode.com/problems/same-tree/" target="_blank" rel="noopener">here</a></h1><p>Given two binary trees, write a function to check if they are the same or not.<br>Two binary trees are considered the same if they are structurally identical and the nodes have the same value.<br>总而言之，就是判断两颗二叉树是否一模一样。左右枝哪怕数字一样顺序不一样都是不行的。<br>It is my first time to use recursion to solve a question, So i will use most of content to explain how to writer a good recursion.</p>
+        <h1 id="Question-here"><a href="#Question-here" class="headerlink" title="Question: here"></a>Question: <a href="https://leetcode.com/problems/univalued-binary-tree/" target="_blank" rel="noopener">here</a></h1><p>A binary tree is univalued if every node in the tree has the same value.<br>Return true if and only if the given tree is univalued.<br>简而言之，判断问二叉树的每个节点的值是不是都是一样的。</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p>Input: [1,1,1,1,1,null,1]<br>Output: true<br>这题和上次的100很像，但100是比较两个二叉树的，这题是比较自身的值是否一致。所以大致思路会延续上次100，但会有细微不同。</p>
 <a id="more"></a>
-<h1 id="Solution-Recursion-递归"><a href="#Solution-Recursion-递归" class="headerlink" title="Solution: Recursion (递归)"></a>Solution: Recursion (递归)</h1><p><a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)" target="_blank" rel="noopener">What’s recursion?</a> From wiki we noticed that recursion is different from <a href="https://en.wikipedia.org/wiki/Iteration#Computing" target="_blank" rel="noopener">iteration(迭代)</a> which repeats a process instead of function to generate the output.</p>
-<p>There are two main parts of recursion: the end point (recursive exit, logical boundary) and the own call part (recursive expression, regular, etc.)</p>
-<p>When write a recursive algorithm, three aspects need to be paid attention: </p>
-<ul>
-<li>Extract the repetitive logic. </li>
-<li>Appropriate exit conditions. </li>
-<li>Control the logical boundaries.</li>
-</ul>
-<p>End point: (I usually write the end point first, because it is easier to think and write)</p>
-<ul>
-<li>Appropriate exit conditions: Find a different node, return 0</li>
-<li>Control logic boundaries: Return 1 when both binary trees are empty, that is, recursively to the leaf node.</li>
-</ul>
-<p>The own call part:</p>
-<ul>
-<li>Extract the repeating logic: The repetition logic of this problem is obvious, that is, to determine whether the values of each node are equal. <code>p.val = q.val</code></li>
-</ul>
-<h2 id="When-to-use-this-part"><a href="#When-to-use-this-part" class="headerlink" title="When to use this part:"></a><strong>When</strong> to use this part:</h2><p>Of course, it must be not reaching to end point. However, this question cannot be considered only in addition to the recursive end point, because this question needs to compare the val of the node. So NoneType object (leaf node) needs to be excluded.<br>    <code>if (p.val == q.val) and p and q:</code><br>Otherwise, <strong>Line 21: AttributeError: ‘NoneType’ object has no attribute ‘val’</strong></p>
-<p>Then you may have a doubt, we have already considered it when controlling the logical boundaries, why consider it again? It should be noted that previously, we considered the senario that two binary trees are empty at the same time. But when one is empty and the other has value, it is easy to encounter a bug. such as the testcase like this: <code>[1,2] [1,null,2]</code><br>What I want to point out that <code>if p and q and (p.val == q.val)</code> this judgment statement is also very clever, because you must pay attention to the order of judgment, such as writing <code>if (p.val == q.val) and p and q:</code>will report an error. <strong>DO YOU KNOW WHY?</strong></p>
-<h2 id="How-to-calculate-this-part"><a href="#How-to-calculate-this-part" class="headerlink" title="How to calculate this part:"></a><strong>How</strong> to calculate this part:</h2><p>When the node values of the two trees are the same, you can recursively judge their nodes, and record the judgment result of the child nodes.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (p.val == q.val) and p and q: </span><br><span class="line">    result = self.same(p.left, q.left) and self.same(p.right, q.right)</span><br><span class="line">    return result</span><br></pre></td></tr></table></figure>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h1><p>这一篇是当时接着100写的，也算是刚入leetcode坑时代码讲解之一。所以写的很细，也会指出一些新手（自己）常犯的错误。</p>
+<h2 id="递归-Recursion"><a href="#递归-Recursion" class="headerlink" title="递归 Recursion"></a>递归 Recursion</h2><p>当使用递归刷题时，就不可避免的会用到函数的互相调用，<a href="https://blog.csdn.net/CLHugh/article/details/75000104" target="_blank" rel="noopener">这里</a>是是讲class内部函数调用的，可以看看</p>
+<p><strong>递归有两大部分：终点（递归出口，逻辑边界）和自身调用部分（递归表达式，规律等）<br>写好一个递归算法要把握三个方面：1.提取重复逻辑 2.合适的退出条件3.控制逻辑边界。</strong><br>（copy上次的，拿过来再强调一下）</p>
+<h3 id="终点："><a href="#终点：" class="headerlink" title="终点："></a>终点：</h3><ol>
+<li>合适的退出条件：<br>发现左支或右支与当前节点的值不同，return 0<br>注意： 这里自己写很容易写错成（root.val != root.right）,思考题：为什么这样写是不对的？正确答案应该怎么写？<br>答案：正确写法：（root.val != root.right.val）<br>root.right是右支，而不是右支节点值。root.val 肯定是一直都不会等于root.right的，即treeNode != val。</li>
+<li>控制逻辑边界<br>当两个二叉树都为空时，即递归到了叶子结点时，return 1。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> root: <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="What-to-returns"><a href="#What-to-returns" class="headerlink" title="What to returns:"></a><strong>What</strong> to returns:</h2><p>Return 1: when both binary trees are empty, in other words, reach to the leaf node<br>Return 0: when the nodes are different<br>Return result: Using <code>and</code> to combine tow results from the left and right sides.</p>
-<h1 id="Final-code"><a href="#Final-code" class="headerlink" title="Final code:"></a>Final code:</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isSameTree</span><span class="params">(self, p, q)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.same(p, q)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">same</span><span class="params">(self, p, q)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> p <span class="keyword">and</span> <span class="keyword">not</span> q:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (p.val == q.val) <span class="keyword">and</span> p <span class="keyword">and</span> q: </span><br><span class="line">            result = self.same(p.left, q.left) <span class="keyword">and</span> self.same(p.right, q.right)</span><br><span class="line">            <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="自身调用部分："><a href="#自身调用部分：" class="headerlink" title="自身调用部分："></a>自身调用部分：</h3><ol start="3">
+<li>提取重复逻辑：<br>这题的重复逻辑就是不断的判断左支或右支与当前节点的值是否相同，因为该逻辑可以直接写在if的判断语句中，所以当if判断完成后直接就是return，中间没有额外的计算操作。</li>
+</ol>
+<p><strong>所以这一题的重点就是在与如何写if判断语句，也就是下面的when</strong></p>
+<p><strong>When何时用这部分</strong>:我觉得要是理不清怎么写，一定要先把左支和右支分开写，至少条理会清楚点。If判断语句也不要写太长。我当时第一次左右放一起写就导致忘记某些特殊case。<br>错误示范： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> root.left <span class="keyword">and</span> root.right <span class="keyword">and</span> (root.left.val != root.val <span class="keyword">or</span> root.right.val != root.val):</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
 
+<p>正确示范：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> root.right <span class="keyword">and</span> root.val != root.right.val:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"><span class="keyword">if</span> root.left <span class="keyword">and</span> root.val != root.left.val:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<p>何时对自身进行调用：即不是叶子结点，也没有遇到不同值时，也就是else</p>
+<p><strong>How这部分怎么计算</strong>: 基本没什么计算部分，省略</p>
+<p><strong>What返回什么</strong>:<br>return 1: 当递归到了叶子结点时<br>return 0:值不一样时<br>return result: 用and逻辑连接左右两支的递归返回结果。</p>
+<h1 id="Final-Code"><a href="#Final-Code" class="headerlink" title="Final Code"></a>Final Code</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isUnivalTree</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">return</span> self.univalued(root)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">univalued</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root: <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">and</span> root.val != root.left.val:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> root.right <span class="keyword">and</span> root.val != root.right.val:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            result = self.univalued(root.left) <span class="keyword">and</span> self.univalued(root.right)</span><br><span class="line">            <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://blog.csdn.net/fuxuemingzhu/article/details/85385974#_46" target="_blank" rel="noopener">这里</a>和<a href="https://blog.csdn.net/chlele0105/article/details/38759593" target="_blank" rel="noopener">这里</a>是这个网址是用BFS和DFS解决二叉树问题的</p>
 
       
     </div>
@@ -451,8 +452,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Hello-My-World.html" rel="next" title="Hello, My World">
-                <i class="fa fa-chevron-left"></i> Hello, My World
+              <a href="/LeetCode-144-Binary-Tree-Preorder-Traversal.html" rel="next" title="LeetCode 144.Binary Tree Preorder Traversal">
+                <i class="fa fa-chevron-left"></i> LeetCode 144.Binary Tree Preorder Traversal
               </a>
             
           </div>
@@ -460,10 +461,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/远方与家乡.html" rel="prev" title="远方与家乡">
-                远方与家乡 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -615,7 +612,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Question-here"><span class="nav-number">1.</span> <span class="nav-text">Question: here</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-Recursion-递归"><span class="nav-number">2.</span> <span class="nav-text">Solution: Recursion (递归)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#When-to-use-this-part"><span class="nav-number">2.1.</span> <span class="nav-text">When to use this part:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-calculate-this-part"><span class="nav-number">2.2.</span> <span class="nav-text">How to calculate this part:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-to-returns"><span class="nav-number">2.3.</span> <span class="nav-text">What to returns:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Final-code"><span class="nav-number">3.</span> <span class="nav-text">Final code:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Question-here"><span class="nav-number">1.</span> <span class="nav-text">Question: here</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">1.1.</span> <span class="nav-text">Example:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#递归-Recursion"><span class="nav-number">2.1.</span> <span class="nav-text">递归 Recursion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#终点："><span class="nav-number">2.1.1.</span> <span class="nav-text">终点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自身调用部分："><span class="nav-number">2.1.2.</span> <span class="nav-text">自身调用部分：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Final-Code"><span class="nav-number">3.</span> <span class="nav-text">Final Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
