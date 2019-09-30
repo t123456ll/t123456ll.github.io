@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Shuolin&#39;s Blog">
 <meta property="og:description" content="Question: hereGiven a list of daily temperatures T, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature. If there is no future">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-06T16:04:42.953Z">
+<meta property="og:updated_time" content="2019-09-30T19:44:56.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode-739-Daily-Temperature">
 <meta name="twitter:description" content="Question: hereGiven a list of daily temperatures T, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature. If there is no future">
@@ -365,10 +365,8 @@
       
 
       
-        <h1 id="Question-here"><a href="#Question-here" class="headerlink" title="Question: here"></a>Question: <a href="https://leetcode.com/problems/daily-temperatures/" target="_blank" rel="noopener">here</a></h1><p>Given a list of daily temperatures T, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead.</p>
-<p>For example, given the list of temperatures T = [73, 74, 75, 71, 69, 72, 76, 73], your output should be [1, 1, 4, 2, 1, 1, 0, 0].</p>
+        <h1 id="Question-here"><a href="#Question-here" class="headerlink" title="Question: here"></a>Question: <a href="https://leetcode.com/problems/daily-temperatures/" target="_blank" rel="noopener">here</a></h1><p>Given a list of daily temperatures T, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead.<br>For example, given the list of temperatures T = [73, 74, 75, 71, 69, 72, 76, 73], your output should be [1, 1, 4, 2, 1, 1, 0, 0].</p>
 <p>Note: The length of temperatures will be in the range [1, 30000]. Each temperature will be an integer in the range [30, 100].<br>简而言之，判断过几天天气才能回暖。</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p>Input: [1,1,1,1,1,null,1]<br>Output: true<br>这题和上次的100很像，但100是比较两个二叉树的，这题是比较自身的值是否一致。所以大致思路会延续上次100，但会有细微不同。</p>
 <a id="more"></a>
 <h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h1><p>首先一看到题目大家想到的方法肯定是遍历，套两层循环暴力搜索气温升高的那天，然后坐标相减得出结果。但是注意Note里面说了可能会有30000天的温度，所以这条路就被否决掉了。但是这并不代表遍历不行，转换角度从温度进行遍历就会快很多。详细可参考<a href="https://blog.csdn.net/fuxuemingzhu/article/details/79285081" target="_blank" rel="noopener">这个微博</a></p>
 <p>但是作为一个优雅的程序员，光写这种代码肯定是不行的。所以今天我们就要用堆栈stack来解决这道题。</p>
@@ -457,6 +455,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/二叉树的深度遍历（前序，中序，后序）和广度遍历（层次遍历）以及 Morris Traversal.html" rel="prev" title="二叉树的深度遍历（前序，中序，后序）和广度遍历（层次遍历）以及 Morris Traversal">
+                二叉树的深度遍历（前序，中序，后序）和广度遍历（层次遍历）以及 Morris Traversal <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -534,7 +536,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -607,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Question-here"><span class="nav-number">1.</span> <span class="nav-text">Question: here</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">1.1.</span> <span class="nav-text">Example:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#堆栈-stack"><span class="nav-number">2.1.</span> <span class="nav-text">堆栈 stack</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Final-Code"><span class="nav-number">3.</span> <span class="nav-text">Final Code</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Question-here"><span class="nav-number">1.</span> <span class="nav-text">Question: here</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#堆栈-stack"><span class="nav-number">2.1.</span> <span class="nav-text">堆栈 stack</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Final-Code"><span class="nav-number">3.</span> <span class="nav-text">Final Code</span></a></li></ol></div>
             
 
           </div>
