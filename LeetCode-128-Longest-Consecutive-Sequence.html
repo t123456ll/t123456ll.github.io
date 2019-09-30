@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Question: hereGiven two binary trees, write a function to check if they are the same or not.Two binary trees are considered the same if they are structurally identical and the nodes have the same valu">
+<meta name="description" content="Question: hereGiven an unsorted array of integers, find the length of the longest consecutive elements sequence. Your algorithm should run in O(n) complexity. Example: 123Input: [100, 4, 200, 1, 3, 2]">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 100.the same tree">
-<meta property="og:url" content="https://t123456ll.github.io/LeetCode-100-the-same-tree.html">
+<meta property="og:title" content="LeetCode 128 Longest Consecutive Sequence">
+<meta property="og:url" content="https://t123456ll.github.io/LeetCode-128-Longest-Consecutive-Sequence.html">
 <meta property="og:site_name" content="Shuolin&#39;s Blog">
-<meta property="og:description" content="Question: hereGiven two binary trees, write a function to check if they are the same or not.Two binary trees are considered the same if they are structurally identical and the nodes have the same valu">
+<meta property="og:description" content="Question: hereGiven an unsorted array of integers, find the length of the longest consecutive elements sequence. Your algorithm should run in O(n) complexity. Example: 123Input: [100, 4, 200, 1, 3, 2]">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-06T15:12:04.788Z">
+<meta property="og:updated_time" content="2019-09-30T20:00:48.723Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 100.the same tree">
-<meta name="twitter:description" content="Question: hereGiven two binary trees, write a function to check if they are the same or not.Two binary trees are considered the same if they are structurally identical and the nodes have the same valu">
+<meta name="twitter:title" content="LeetCode 128 Longest Consecutive Sequence">
+<meta name="twitter:description" content="Question: hereGiven an unsorted array of integers, find the length of the longest consecutive elements sequence. Your algorithm should run in O(n) complexity. Example: 123Input: [100, 4, 200, 1, 3, 2]">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://t123456ll.github.io/LeetCode-100-the-same-tree.html">
+  <link rel="canonical" href="https://t123456ll.github.io/LeetCode-128-Longest-Consecutive-Sequence.html">
 
 
 
 
 
-  <title>LeetCode 100.the same tree | Shuolin's Blog</title>
+  <title>LeetCode 128 Longest Consecutive Sequence | Shuolin's Blog</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/LeetCode-100-the-same-tree.html">
+    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/LeetCode-128-Longest-Consecutive-Sequence.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shuolin Tian">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode 100.the same tree</h1>
+          <h1 class="post-title" itemprop="name headline">LeetCode 128 Longest Consecutive Sequence</h1>
         
 
         <div class="post-meta">
@@ -322,8 +322,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-04T23:55:59-04:00">
-                2019-07-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-30T15:54:11-04:00">
+                2019-09-30
               </time>
             
 
@@ -365,32 +365,19 @@
       
 
       
-        <h1 id="Question-here"><a href="#Question-here" class="headerlink" title="Question: here"></a>Question: <a href="https://leetcode.com/problems/same-tree/" target="_blank" rel="noopener">here</a></h1><p>Given two binary trees, write a function to check if they are the same or not.<br>Two binary trees are considered the same if they are structurally identical and the nodes have the same value.<br>总而言之，就是判断两颗二叉树是否一模一样。左右枝哪怕数字一样顺序不一样都是不行的。<br>It is my first time to use recursion to solve a question, So i will use most of content to explain how to writer a good recursion.</p>
-<a id="more"></a>
-<h1 id="Solution-Recursion-递归"><a href="#Solution-Recursion-递归" class="headerlink" title="Solution: Recursion (递归)"></a>Solution: Recursion (递归)</h1><p><a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)" target="_blank" rel="noopener">What’s recursion?</a> From wiki we noticed that recursion is different from <a href="https://en.wikipedia.org/wiki/Iteration#Computing" target="_blank" rel="noopener">iteration(迭代)</a> which repeats a process instead of function to generate the output.</p>
-<p>There are two main parts of recursion: the end point (recursive exit, logical boundary) and the own call part (recursive expression, regular, etc.)</p>
-<p>When write a recursive algorithm, three aspects need to be paid attention: </p>
-<ul>
-<li>Extract the repetitive logic. </li>
-<li>Appropriate exit conditions. </li>
-<li>Control the logical boundaries.</li>
-</ul>
-<p>End point: (I usually write the end point first, because it is easier to think and write)</p>
-<ul>
-<li>Appropriate exit conditions: Find a different node, return 0</li>
-<li>Control logic boundaries: Return 1 when both binary trees are empty, that is, recursively to the leaf node.</li>
-</ul>
-<p>The own call part:</p>
-<ul>
-<li>Extract the repeating logic: The repetition logic of this problem is obvious, that is, to determine whether the values of each node are equal. <code>p.val = q.val</code></li>
-</ul>
-<h2 id="When-to-use-this-part"><a href="#When-to-use-this-part" class="headerlink" title="When to use this part:"></a><strong>When</strong> to use this part:</h2><p>Of course, it must be not reaching to end point. However, this question cannot be considered only in addition to the recursive end point, because this question needs to compare the val of the node. So NoneType object (leaf node) needs to be excluded.<br>    <code>if (p.val == q.val) and p and q:</code><br>Otherwise, <strong>Line 21: AttributeError: ‘NoneType’ object has no attribute ‘val’</strong></p>
-<p>Then you may have a doubt, we have already considered it when controlling the logical boundaries, why consider it again? It should be noted that previously, we considered the senario that two binary trees are empty at the same time. But when one is empty and the other has value, it is easy to encounter a bug. such as the testcase like this: <code>[1,2] [1,null,2]</code><br>What I want to point out that <code>if p and q and (p.val == q.val)</code> this judgment statement is also very clever, because you must pay attention to the order of judgment, such as writing <code>if (p.val == q.val) and p and q:</code>will report an error. <strong>DO YOU KNOW WHY?</strong></p>
-<h2 id="How-to-calculate-this-part"><a href="#How-to-calculate-this-part" class="headerlink" title="How to calculate this part:"></a><strong>How</strong> to calculate this part:</h2><p>When the node values of the two trees are the same, you can recursively judge their nodes, and record the judgment result of the child nodes.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (p.val == q.val) and p and q: </span><br><span class="line">    result = self.same(p.left, q.left) and self.same(p.right, q.right)</span><br><span class="line">    return result</span><br></pre></td></tr></table></figure>
+        <h1 id="Question-here"><a href="#Question-here" class="headerlink" title="Question: here"></a>Question: <a href="https://leetcode.com/problems/longest-consecutive-sequence/" target="_blank" rel="noopener">here</a></h1><p>Given an unsorted array of integers, find the length of the longest consecutive elements sequence.</p>
+<p>Your algorithm should run in O(<em>n</em>) complexity.</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [100, 4, 200, 1, 3, 2]</span><br><span class="line">Output: 4</span><br><span class="line">Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.</span><br></pre></td></tr></table></figure>
 
-<h2 id="What-to-returns"><a href="#What-to-returns" class="headerlink" title="What to returns:"></a><strong>What</strong> to returns:</h2><p>Return 1: when both binary trees are empty, in other words, reach to the leaf node<br>Return 0: when the nodes are different<br>Return result: Using <code>and</code> to combine tow results from the left and right sides.</p>
-<h1 id="Final-code"><a href="#Final-code" class="headerlink" title="Final code:"></a>Final code:</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isSameTree</span><span class="params">(self, p, q)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.same(p, q)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">same</span><span class="params">(self, p, q)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> p <span class="keyword">and</span> <span class="keyword">not</span> q:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (p.val == q.val) <span class="keyword">and</span> p <span class="keyword">and</span> q: </span><br><span class="line">            result = self.same(p.left, q.left) <span class="keyword">and</span> self.same(p.right, q.right)</span><br><span class="line">            <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><ol>
+<li>set (hashmap)</li>
+</ol>
+<p>因为要保证O(n)的时间复杂度，所以可以使用set先来保存一下list。这样对每个元素的查询就都是O(1)的时间。</p>
+<p>当想要知道最长的连续元素时，我们需要先取n， 然后找他的n-1, n+1在不在set中，但这样难免出现重复查找的情况，比如一串数字3456，无论n遍历到哪一个数字，都会把其他的再查一遍，为了减少这种情况的出现。我们不如直接找到这串数字的开头，也就是3。如何找呢？我们就去找2，也就是（n-1）在不在set中，不在，那3肯定就是开头，那代码也就能出来了，凡是遍历n时n-1在set中，那就直接跳过，只去寻找那些是开头的数字后面到底跟了多少数。结果取最长的</p>
+<h1 id="Final-Code"><a href="#Final-Code" class="headerlink" title="Final Code"></a>Final Code</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">longestConsecutive</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">nums = set(nums)</span><br><span class="line">ans = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> nums:</span><br><span class="line"><span class="keyword">if</span> x<span class="number">-1</span> <span class="keyword">not</span> <span class="keyword">in</span> nums:</span><br><span class="line">y = x+<span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> y <span class="keyword">in</span> nums:</span><br><span class="line">y += <span class="number">1</span></span><br><span class="line">ans = max(ans, y-x)</span><br><span class="line"><span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
 
 
       
@@ -451,8 +438,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Hello-My-World.html" rel="next" title="Hello, My World">
-                <i class="fa fa-chevron-left"></i> Hello, My World
+              <a href="/二叉树的深度遍历（前序，中序，后序）和广度遍历（层次遍历）以及 Morris Traversal.html" rel="next" title="二叉树的深度遍历（前序，中序，后序）和广度遍历（层次遍历）以及 Morris Traversal">
+                <i class="fa fa-chevron-left"></i> 二叉树的深度遍历（前序，中序，后序）和广度遍历（层次遍历）以及 Morris Traversal
               </a>
             
           </div>
@@ -460,10 +447,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/远方与家乡.html" rel="prev" title="远方与家乡">
-                远方与家乡 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -615,7 +598,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Question-here"><span class="nav-number">1.</span> <span class="nav-text">Question: here</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-Recursion-递归"><span class="nav-number">2.</span> <span class="nav-text">Solution: Recursion (递归)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#When-to-use-this-part"><span class="nav-number">2.1.</span> <span class="nav-text">When to use this part:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-calculate-this-part"><span class="nav-number">2.2.</span> <span class="nav-text">How to calculate this part:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-to-returns"><span class="nav-number">2.3.</span> <span class="nav-text">What to returns:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Final-code"><span class="nav-number">3.</span> <span class="nav-text">Final code:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Question-here"><span class="nav-number">1.</span> <span class="nav-text">Question: here</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Final-Code"><span class="nav-number">3.</span> <span class="nav-text">Final Code</span></a></li></ol></div>
             
 
           </div>
