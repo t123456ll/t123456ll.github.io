@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Hexo">
+  <meta name="keywords" content="shuolin tian, Hexo, NexT">
 
 
 
@@ -81,18 +81,20 @@
 
 
 
-<meta name="description" content="如何在Hexo NexT主题中添加音乐">
-<meta name="keywords" content="Hexo">
+<meta name="description" content="万恶的算法作业，要找寻一条边是否在MST中，看似简单，却暗藏玄机，因为一个graph可能不止有一个MST，用Kruskal 算法找到MST固然简单，但找到所有MST似乎就只能用Prim了。不想删掉我辛辛苦苦写的Kruskal算法，便写了这篇文章作为总结。">
+<meta name="keywords" content="田烁琳">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo NexT主题中如何添加音乐">
-<meta property="og:url" content="https://t123456ll.github.io/Hexo-NexT主题中如何添加音乐.html">
+<meta property="og:title" content="Minimum Spanning Trees(MST), Kruskal and Prim algorithm">
+<meta property="og:url" content="https://t123456ll.github.io/Minimum Spanning Trees(MST), Kruskal and Prim algorithm.html">
 <meta property="og:site_name" content="Shuolin&#39;s Blog">
-<meta property="og:description" content="如何在Hexo NexT主题中添加音乐">
+<meta property="og:description" content="万恶的算法作业，要找寻一条边是否在MST中，看似简单，却暗藏玄机，因为一个graph可能不止有一个MST，用Kruskal 算法找到MST固然简单，但找到所有MST似乎就只能用Prim了。不想删掉我辛辛苦苦写的Kruskal算法，便写了这篇文章作为总结。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-06T20:48:23.771Z">
+<meta property="og:image" content="https://imgur.com/lrwEByp.jpg">
+<meta property="og:updated_time" content="2019-10-20T07:11:05.511Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo NexT主题中如何添加音乐">
-<meta name="twitter:description" content="如何在Hexo NexT主题中添加音乐">
+<meta name="twitter:title" content="Minimum Spanning Trees(MST), Kruskal and Prim algorithm">
+<meta name="twitter:description" content="万恶的算法作业，要找寻一条边是否在MST中，看似简单，却暗藏玄机，因为一个graph可能不止有一个MST，用Kruskal 算法找到MST固然简单，但找到所有MST似乎就只能用Prim了。不想删掉我辛辛苦苦写的Kruskal算法，便写了这篇文章作为总结。">
+<meta name="twitter:image" content="https://imgur.com/lrwEByp.jpg">
 
 
 
@@ -122,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="https://t123456ll.github.io/Hexo-NexT主题中如何添加音乐.html">
+  <link rel="canonical" href="https://t123456ll.github.io/Minimum Spanning Trees(MST), Kruskal and Prim algorithm.html">
 
 
 
 
 
-  <title>Hexo NexT主题中如何添加音乐 | Shuolin's Blog</title>
+  <title>Minimum Spanning Trees(MST), Kruskal and Prim algorithm | Shuolin's Blog</title>
   
 
 
@@ -293,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/Hexo-NexT主题中如何添加音乐.html">
+    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/Minimum Spanning Trees(MST), Kruskal and Prim algorithm.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shuolin Tian">
@@ -310,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo NexT主题中如何添加音乐</h1>
+          <h1 class="post-title" itemprop="name headline">Minimum Spanning Trees(MST), Kruskal and Prim algorithm</h1>
         
 
         <div class="post-meta">
@@ -322,8 +324,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-06T11:41:25-04:00">
-                2019-07-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-20T02:59:26-04:00">
+                2019-10-20
               </time>
             
 
@@ -351,10 +353,6 @@
           
 
           
-              <div class="post-description">
-                  如何在Hexo NexT主题中添加音乐
-              </div>
-          
 
         </div>
       </header>
@@ -369,7 +367,25 @@
       
 
       
-        <p>搭建Blog的第三天，为了提升逼格，开始考虑给博客加点背景音乐，文章音乐等。此篇文章就是记录并分享一下如何在NexT主题中添加音乐。<br>首先需要感谢丰富的互联网资源，让我这种不是科班出生的人都可以搭建属于自己的网站，感谢感恩感动。<br>此篇文章仅讨论如何在Hexo，next主题下添加音乐。所以默认大家都已经搭建好平台了。关于这部分我就不多赘述了，可能以后会出平台搭建教程（先挖个坑）。</p>
+        <p>万恶的算法作业，要找寻一条边是否在MST中，看似简单，却暗藏玄机，因为一个graph可能不止有一个MST，用Kruskal 算法找到MST固然简单，但找到所有MST似乎就只能用Prim了。不想删掉我辛辛苦苦写的Kruskal算法，便写了这篇文章作为总结。</p>
+<a id="more"></a>
+<p>题目</p>
+<blockquote>
+<p>[python3] (7 points) Devise, then code in python 3, a efficient algorithm for the following problem. Inputs: (i) a connected weighted undirected graph G = ⟨V,E⟩, and, (ii) an edge e ∈ E. Output: true if there is a minimum spanning tree of G that contains e, and false otherwise. G is provided in adjacency list format, and e as a list which encodes a pair. E.g., an encoding of the following graph is [[[3,10], [1,100], [2, 20]], [[0,100]], [[0,20],[3,10]], [[2,10],[0,10]]], and the output is false for edge [2,0] and true for edge [0,1]. </p>
+<p><img src="https://imgur.com/lrwEByp.jpg" alt></p>
+</blockquote>
+<ol>
+<li>Kruskal</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mstexists</span><span class="params">(G, e)</span>:</span></span><br><span class="line">		<span class="comment"># to re-organize input G into edges</span></span><br><span class="line">    edges = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(G)):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(G[i])):</span><br><span class="line">            f = G[i][j][<span class="number">0</span>]</span><br><span class="line">            w = G[i][j][<span class="number">1</span>]</span><br><span class="line">            <span class="comment"># avoid the situation that adding two same edge, like(1,2),(2,1)</span></span><br><span class="line">            edge = sorted([i, f]) </span><br><span class="line">            edge.append(w)</span><br><span class="line">            <span class="keyword">if</span> edge <span class="keyword">not</span> <span class="keyword">in</span> edges:</span><br><span class="line">                edges.append(edge)</span><br><span class="line"></span><br><span class="line">    edges = sorted(edges, key = <span class="keyword">lambda</span> x:x[<span class="number">2</span>]) </span><br><span class="line">    <span class="comment"># Kruskal algorithm: choose edge with increase order of edge's weight</span></span><br><span class="line">    mem = [] <span class="comment"># to record vertice which have been added into MST</span></span><br><span class="line">    MST = [] <span class="comment"># to record edges which have been added into MST</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> edge <span class="keyword">in</span> edges:</span><br><span class="line">        s = edge[<span class="number">0</span>]</span><br><span class="line">        f = edge[<span class="number">1</span>]</span><br><span class="line">        w = edge[<span class="number">2</span>]</span><br><span class="line">        <span class="keyword">if</span> s <span class="keyword">not</span> <span class="keyword">in</span> mem <span class="keyword">or</span> f <span class="keyword">not</span> <span class="keyword">in</span> mem: <span class="comment"># not a cycle</span></span><br><span class="line">            mem.append(s)</span><br><span class="line">            mem.append(f)</span><br><span class="line">            MST.append([s,f])</span><br><span class="line">        <span class="keyword">if</span> len(set(mem)) == len(G):</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sorted(e) <span class="keyword">in</span> MST</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Prim</li>
+</ol>
+<p>用于寻找所有的 MST 所包含的边。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mstexists</span><span class="params">(G, e)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    You need to implement this method.</span></span><br><span class="line"><span class="string">    G is an adjacency list in the format discussed in the handout</span></span><br><span class="line"><span class="string">    e is a list of two items, e.g., [0,4]</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    MST = []</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> range(len(G)):</span><br><span class="line">        Prim(s, G, MST)</span><br><span class="line">        <span class="comment"># print(MST)</span></span><br><span class="line">    <span class="comment"># print(sorted(e) in MST)</span></span><br><span class="line">    <span class="keyword">return</span> sorted(e) <span class="keyword">in</span> MST</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Prim</span><span class="params">(s, G, MST)</span>:</span></span><br><span class="line">    <span class="comment"># initialization</span></span><br><span class="line">    key = [float(<span class="string">'inf'</span>)] * len(G)</span><br><span class="line">    Q = []</span><br><span class="line">    mem = [] <span class="comment"># keep track of vertices already included in MST</span></span><br><span class="line">    key[s] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> edge <span class="keyword">in</span> G[s]:</span><br><span class="line">        Q.append([s, edge[<span class="number">0</span>], edge[<span class="number">1</span>]]) <span class="comment"># [start, finish, weight]</span></span><br><span class="line">    Q = sorted(Q, key = <span class="keyword">lambda</span> x:x[<span class="number">2</span>])</span><br><span class="line">    mem.append(s)</span><br><span class="line">    <span class="keyword">while</span> len(mem) != len(G):</span><br><span class="line">        nxt = Q.pop(<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">if</span> nxt[<span class="number">1</span>] <span class="keyword">in</span> mem:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        e = sorted([nxt[<span class="number">0</span>], nxt[<span class="number">1</span>]])</span><br><span class="line">        <span class="keyword">if</span> e <span class="keyword">not</span> <span class="keyword">in</span> MST:</span><br><span class="line">            MST.append(e)</span><br><span class="line">        mem.append(nxt[<span class="number">1</span>])</span><br><span class="line">        s = nxt[<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">for</span> edge <span class="keyword">in</span> G[s]:</span><br><span class="line">            f = edge[<span class="number">0</span>]</span><br><span class="line">            <span class="keyword">if</span> f <span class="keyword">not</span> <span class="keyword">in</span> mem:</span><br><span class="line">                Q.append([s, f, edge[<span class="number">1</span>]])  <span class="comment"># [start, finish, weight]</span></span><br><span class="line">        Q = sorted(Q, key=<span class="keyword">lambda</span> x: x[<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+
+<p>亮点：1. 使用sorted避免加入重复边。</p>
 
       
     </div>
@@ -414,12 +430,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/NexT/" rel="tag"># NexT</a>
-          
-        </div>
-      
 
       
       
@@ -429,8 +439,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/远方与家乡.html" rel="next" title="远方与家乡">
-                <i class="fa fa-chevron-left"></i> 远方与家乡
+              <a href="/what is 'cut and paste' in proving algorithm.html" rel="next" title="What is 'cut and paste' in proving algorithm 算法证明中的‘复制粘贴法’到底是啥">
+                <i class="fa fa-chevron-left"></i> What is 'cut and paste' in proving algorithm 算法证明中的‘复制粘贴法’到底是啥
               </a>
             
           </div>
@@ -438,10 +448,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/LeetCode-144-Binary-Tree-Preorder-Traversal.html" rel="prev" title="LeetCode 144.Binary Tree Preorder Traversal">
-                LeetCode 144.Binary Tree Preorder Traversal <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
