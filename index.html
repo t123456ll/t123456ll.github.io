@@ -367,7 +367,8 @@
 
       
         
-          <p><strong>dp的本质是：当前的分析要建立在过往分析的基础上。所以过往分析一定要做到两点，一个是全，一个是优。</strong></p>
+          <p>首先这是一篇对于动态规划进一步归纳总结的文章，所以一些对于动态规划的基本概念我就不介绍了。如果还有对动态规划不太了解的地方，可以看看<a href="https://www.zhihu.com/question/23995189" target="_blank" rel="noopener">这里</a>。</p>
+<p><strong>dp的本质是：当前的分析要建立在过往分析的基础上。所以过往分析一定要做到两点，一个是全，一个是优。</strong></p>
 <p>对于全：如果对过往分析的成果保存不全（比如：用新数据覆盖了，或者根本没存）那么信息的缺失一定会导致结果的局限性，且不能达到最优。</p>
 <p>对于优：即存下来的东西一定要是最优的结果。但是很多人在找动态转移方程时就会犯一个错误，为了优而放弃了全，用最优的新数据覆盖了后面可能还会需要用到的数据。在我看来这是DP用不好的重要原因之一。</p>
 <p>所以为了兼顾优和全，储存DP结果的这个list的一定要构造好。把需要做到全的结果，当成需要存储的一个维度，这样一般就可以解决上面这个问题。</p>
@@ -1599,7 +1600,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
