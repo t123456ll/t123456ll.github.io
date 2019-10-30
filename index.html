@@ -297,6 +297,133 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/DP动态规划的一些想法 + Leetcode120,213 Solution.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shuolin Tian">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shuolin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/DP动态规划的一些想法 + Leetcode120,213 Solution.html" itemprop="url">DP动态规划的一些想法 + Leetcode120,213 Solution</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-29T23:21:16-04:00">
+                2019-10-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><strong>dp的本质是：当前的分析要建立在过往分析的基础上。所以过往分析一定要做到两点，一个是全，一个是优。</strong></p>
+<p>对于全：如果对过往分析的成果保存不全（比如：用新数据覆盖了，或者根本没存）那么信息的缺失一定会导致结果的局限性，且不能达到最优。</p>
+<p>对于优：即存下来的东西一定要是最优的结果。但是很多人在找动态转移方程时就会犯一个错误，为了优而放弃了全，用最优的新数据覆盖了后面可能还会需要用到的数据。在我看来这是DP用不好的重要原因之一。</p>
+<p>所以为了兼顾优和全，储存DP结果的这个list的一定要构造好。把需要做到全的结果，当成需要存储的一个维度，这样一般就可以解决上面这个问题。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/DP动态规划的一些想法 + Leetcode120,213 Solution.html#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/个人博客 SEO 优化 How to do SEO.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1170,131 +1297,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/LeetCode-739-Daily-Temperature.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shuolin Tian">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Shuolin's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/LeetCode-739-Daily-Temperature.html" itemprop="url">LeetCode 739 Daily Temperature</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-06T10:54:06-04:00">
-                2019-08-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Question-here"><a href="#Question-here" class="headerlink" title="Question: here"></a>Question: <a href="https://leetcode.com/problems/daily-temperatures/" target="_blank" rel="noopener">here</a></h1><p>Given a list of daily temperatures T, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead.<br>For example, given the list of temperatures T = [73, 74, 75, 71, 69, 72, 76, 73], your output should be [1, 1, 4, 2, 1, 1, 0, 0].</p>
-<p>Note: The length of temperatures will be in the range [1, 30000]. Each temperature will be an integer in the range [30, 100].<br>简而言之，判断过几天天气才能回暖。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/LeetCode-739-Daily-Temperature.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/LeetCode-965-Univalued-Binary-Tree.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1420,7 +1422,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/LeetCode-144-Binary-Tree-Preorder-Traversal.html">
+    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/LeetCode-739-Daily-Temperature.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shuolin Tian">
@@ -1439,7 +1441,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/LeetCode-144-Binary-Tree-Preorder-Traversal.html" itemprop="url">LeetCode 144.Binary Tree Preorder Traversal</a></h1>
+                <a class="post-title-link" href="/LeetCode-739-Daily-Temperature.html" itemprop="url">LeetCode 739 Daily Temperature</a></h1>
         
 
         <div class="post-meta">
@@ -1451,8 +1453,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-06T23:45:25-04:00">
-                2019-07-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-06T10:54:06-04:00">
+                2019-08-06
               </time>
             
 
@@ -1490,17 +1492,11 @@
 
       
         
-          <h1 id="Question-here"><a href="#Question-here" class="headerlink" title="Question: here"></a>Question: <a href="https://leetcode.com/problems/binary-tree-preorder-traversal/" target="_blank" rel="noopener">here</a></h1><p>Given a binary tree, return the preorder traversal of its nodes’ values.<br>简而言之，用<strong>前序</strong>输出二叉树，至于什么是前序preorder，中序inorder和后序postorder，click <a href="https://en.wikipedia.org/wiki/Tree_traversal" target="_blank" rel="noopener">here</a></p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><pre><code>Input: [1,null,2,3]
-  1
-   \
-    2
-   /
-  3
-Output: [1,2,3]</code></pre><p>这一题用递归很简单，遍历就行，但因为遍历有两个常用的方法：一是递归(recursive)，二是使用栈实现的迭代版本(stack+iterative)。这两种方法都是O(n)的空间复杂度（递归本身占用stack空间或者用户自定义的stack），那但如何使空间复杂度为O（1）呢？</p>
+          <h1 id="Question-here"><a href="#Question-here" class="headerlink" title="Question: here"></a>Question: <a href="https://leetcode.com/problems/daily-temperatures/" target="_blank" rel="noopener">here</a></h1><p>Given a list of daily temperatures T, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead.<br>For example, given the list of temperatures T = [73, 74, 75, 71, 69, 72, 76, 73], your output should be [1, 1, 4, 2, 1, 1, 0, 0].</p>
+<p>Note: The length of temperatures will be in the range [1, 30000]. Each temperature will be an integer in the range [30, 100].<br>简而言之，判断过几天天气才能回暖。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/LeetCode-144-Binary-Tree-Preorder-Traversal.html#more" rel="contents">
+            <a class="btn" href="/LeetCode-739-Daily-Temperature.html#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1590,7 +1586,7 @@ Output: [1,2,3]</code></pre><p>这一题用递归很简单，遍历就行，但�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1603,7 +1599,7 @@ Output: [1,2,3]</code></pre><p>这一题用递归很简单，遍历就行，但�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
