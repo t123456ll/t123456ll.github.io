@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="LeetCode,">
+  <meta name="keywords" content="HTTP">
 
 
 
@@ -81,18 +81,26 @@
 
 
 
-<meta name="description" content="Question: hereA binary tree is univalued if every node in the tree has the same value.Return true if and only if the given tree is univalued.简而言之，判断问二叉树的每个节点的值是不是都是一样的。 Example:Input: [1,1,1,1,1,null,">
-<meta name="keywords" content="LeetCode">
+<meta name="description" content="教材：图解HTTP 分享一下自己做的笔记。share my note about studying HTTP">
+<meta name="keywords" content="HTTP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 965 Univalued Binary Tree">
-<meta property="og:url" content="https://t123456ll.github.io/LeetCode-965-Univalued-Binary-Tree.html">
+<meta property="og:title" content="HTTP学习笔记">
+<meta property="og:url" content="https://t123456ll.github.io/HTTP学习笔记.html">
 <meta property="og:site_name" content="Shuolin&#39;s Blog">
-<meta property="og:description" content="Question: hereA binary tree is univalued if every node in the tree has the same value.Return true if and only if the given tree is univalued.简而言之，判断问二叉树的每个节点的值是不是都是一样的。 Example:Input: [1,1,1,1,1,null,">
+<meta property="og:description" content="教材：图解HTTP 分享一下自己做的笔记。share my note about studying HTTP">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-30T20:00:23.910Z">
+<meta property="og:image" content="https://imgur.com/D3PXQ1p.jpg">
+<meta property="og:image" content="https://imgur.com/1TV03lX.png">
+<meta property="og:image" content="https://imgur.com/9P4CRtW.png">
+<meta property="og:image" content="https://imgur.com/C3vantT.png">
+<meta property="og:image" content="https://imgur.com/idjqEtS.jpg">
+<meta property="og:image" content="https://imgur.com/812yZOs.jpg">
+<meta property="og:image" content="https://imgur.com/bEOH1BZ.jpg">
+<meta property="og:updated_time" content="2019-11-06T05:38:03.769Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 965 Univalued Binary Tree">
-<meta name="twitter:description" content="Question: hereA binary tree is univalued if every node in the tree has the same value.Return true if and only if the given tree is univalued.简而言之，判断问二叉树的每个节点的值是不是都是一样的。 Example:Input: [1,1,1,1,1,null,">
+<meta name="twitter:title" content="HTTP学习笔记">
+<meta name="twitter:description" content="教材：图解HTTP 分享一下自己做的笔记。share my note about studying HTTP">
+<meta name="twitter:image" content="https://imgur.com/D3PXQ1p.jpg">
 
 
 
@@ -122,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="https://t123456ll.github.io/LeetCode-965-Univalued-Binary-Tree.html">
+  <link rel="canonical" href="https://t123456ll.github.io/HTTP学习笔记.html">
 
 
 
 
 
-  <title>LeetCode 965 Univalued Binary Tree | Shuolin's Blog</title>
+  <title>HTTP学习笔记 | Shuolin's Blog</title>
   
 
 
@@ -297,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/LeetCode-965-Univalued-Binary-Tree.html">
+    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/HTTP学习笔记.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shuolin Tian">
@@ -314,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode 965 Univalued Binary Tree</h1>
+          <h1 class="post-title" itemprop="name headline">HTTP学习笔记</h1>
         
 
         <div class="post-meta">
@@ -326,8 +334,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-06T10:54:06-04:00">
-                2019-08-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-06T00:23:42-05:00">
+                2019-11-06
               </time>
             
 
@@ -369,34 +377,160 @@
       
 
       
-        <h1 id="Question-here"><a href="#Question-here" class="headerlink" title="Question: here"></a>Question: <a href="https://leetcode.com/problems/univalued-binary-tree/" target="_blank" rel="noopener">here</a></h1><p>A binary tree is univalued if every node in the tree has the same value.<br>Return true if and only if the given tree is univalued.<br>简而言之，判断问二叉树的每个节点的值是不是都是一样的。</p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><p>Input: [1,1,1,1,1,null,1]<br>Output: true<br>这题和上次的100很像，但100是比较两个二叉树的，这题是比较自身的值是否一致。所以大致思路会延续上次100，但会有细微不同。</p>
+        <p>教材：图解HTTP</p>
+<p>分享一下自己做的笔记。share my note about studying HTTP</p>
 <a id="more"></a>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h1><p>这一篇是当时接着100写的，也算是刚入leetcode坑时代码讲解之一。所以写的很细，也会指出一些新手（自己）常犯的错误。</p>
-<h2 id="递归-Recursion"><a href="#递归-Recursion" class="headerlink" title="递归 Recursion"></a>递归 Recursion</h2><p>当使用递归刷题时，就不可避免的会用到函数的互相调用，<a href="https://blog.csdn.net/CLHugh/article/details/75000104" target="_blank" rel="noopener">这里</a>是是讲class内部函数调用的，可以看看</p>
-<p><strong>递归有两大部分：终点（递归出口，逻辑边界）和自身调用部分（递归表达式，规律等）<br>写好一个递归算法要把握三个方面：1.提取重复逻辑 2.合适的退出条件3.控制逻辑边界。</strong><br>（copy上次的，拿过来再强调一下）</p>
-<h3 id="终点："><a href="#终点：" class="headerlink" title="终点："></a>终点：</h3><ol>
-<li>合适的退出条件：<br>发现左支或右支与当前节点的值不同，return 0<br>注意： 这里自己写很容易写错成（root.val != root.right）,思考题：为什么这样写是不对的？正确答案应该怎么写？<br>答案：正确写法：（root.val != root.right.val）<br>root.right是右支，而不是右支节点值。root.val 肯定是一直都不会等于root.right的，即treeNode != val。</li>
-<li>控制逻辑边界<br>当两个二叉树都为空时，即递归到了叶子结点时，return 1。<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> root: <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
 
+<ol>
+<li><p>TCP/IP协议：</p>
+<p>四层：应用层，传输层，网络层，数据链路层。</p>
+<p>应用层 application layer：FTP, DNS, HTTP</p>
+<p>传输层 transport layer：TCP, UDP</p>
+<p>网络层 network layer ：处理数据包 Packet，路由选择 routing</p>
+<p>数据链路层 data link layer: hardware part, control OS, network interface card.</p>
+</li>
+<li><p>Encapsulate :</p>
 </li>
 </ol>
-<h3 id="自身调用部分："><a href="#自身调用部分：" class="headerlink" title="自身调用部分："></a>自身调用部分：</h3><ol start="3">
-<li>提取重复逻辑：<br>这题的重复逻辑就是不断的判断左支或右支与当前节点的值是否相同，因为该逻辑可以直接写在if的判断语句中，所以当if判断完成后直接就是return，中间没有额外的计算操作。</li>
+<p><img src="https://imgur.com/D3PXQ1p.jpg" alt="Imgur"></p>
+<ol start="3">
+<li><p>TCP/IP 协议介绍：</p>
+<p>HTTP: generate requirement message, address requirement message</p>
+<p>TCP: Three-way handshaking, ACK, SYN.</p>
+<p>​         Message —-split into—-&gt; segment </p>
+<p>​         several segments —–re-organize—-&gt; Message</p>
+<p>IP: routing </p>
+<p>ARP: address resolution protocol, IP address -&gt; MAC address</p>
+<p>DNS: domain name system. Domain name -&gt; IP address</p>
+</li>
+<li><p>URI &amp; URL</p>
+<p>URI: Uniform (统一的格式) Resource (各种资源，图片，文字等，或是整个集合) Identifier (标识资源)</p>
+<p>URL: Uniform Resource Locator(标识资源地点)</p>
+<p>URL $\subseteq$ URI</p>
+</li>
+<li><p>HTTP是不保存状态的协议 (stateless): 不保存过往请求和响应，不记录client</p>
+<p>简单高效，但是存在问题：用户登陆一个购物网站，你需要记录用户的登录状态，哪怕切换到别的网页。</p>
+<p>解决方法: 1. 在报文中加入参数管理登录状态。2. <strong>cookie</strong></p>
+</li>
 </ol>
-<p><strong>所以这一题的重点就是在与如何写if判断语句，也就是下面的when</strong></p>
-<p><strong>When何时用这部分</strong>:我觉得要是理不清怎么写，一定要先把左支和右支分开写，至少条理会清楚点。If判断语句也不要写太长。我当时第一次左右放一起写就导致忘记某些特殊case。<br>错误示范： </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> root.left <span class="keyword">and</span> root.right <span class="keyword">and</span> (root.left.val != root.val <span class="keyword">or</span> root.right.val != root.val):</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
-
-<p>正确示范：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> root.right <span class="keyword">and</span> root.val != root.right.val:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"><span class="keyword">if</span> root.left <span class="keyword">and</span> root.val != root.left.val:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
-
-<p>何时对自身进行调用：即不是叶子结点，也没有遇到不同值时，也就是else</p>
-<p><strong>How这部分怎么计算</strong>: 基本没什么计算部分，省略</p>
-<p><strong>What返回什么</strong>:<br>return 1: 当递归到了叶子结点时<br>return 0:值不一样时<br>return result: 用and逻辑连接左右两支的递归返回结果。</p>
-<h1 id="Final-Code"><a href="#Final-Code" class="headerlink" title="Final Code"></a>Final Code</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isUnivalTree</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">return</span> self.univalued(root)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">univalued</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root: <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">and</span> root.val != root.left.val:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> root.right <span class="keyword">and</span> root.val != root.right.val:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            result = self.univalued(root.left) <span class="keyword">and</span> self.univalued(root.right)</span><br><span class="line">            <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
-
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://blog.csdn.net/fuxuemingzhu/article/details/85385974#_46" target="_blank" rel="noopener">这里</a>和<a href="https://blog.csdn.net/chlele0105/article/details/38759593" target="_blank" rel="noopener">这里</a>是用BFS和DFS解决二叉树问题</p>
+<ol start="6">
+<li><p>HTTP 协议支持的一些方法</p>
+<p><img src="https://imgur.com/1TV03lX.png" alt="image-20191104162543231"></p>
+</li>
+<li><p>多部分对象集合</p>
+<p>MIME (multipurpose Internet Mail Extension) 让我们在发送邮件时，可以添加文件，图片等附件</p>
+<p>HTTP也有相似的功能。</p>
+</li>
+<li><p>获取部分的范围请求</p>
+<p>当下载中断时，需要从中断部分重新开始下载，而不是全部在发一遍，这时候就需要用到 获取部分的范围请求 (Range request)。用到首部字段 range 标记 byte 范围</p>
+</li>
+<li><p>内容协商 content negotiation</p>
+<p>根据协商返回最适合的内容。如根据浏览器语言设置返回中文界面还是英文界面。</p>
+</li>
+<li><p>返回结果里的HTTP状态码</p>
+<p><img src="https://imgur.com/9P4CRtW.png" alt="image-20191104165812216"></p>
+<p>可能一提专业名称大家都没反应过来这是啥，但是大家一定知道404 Not Found，这就是状态码的一种，标识服务器上找不到资源或者是服务器无理由拒绝请求。</p>
+</li>
+<li><p>一台web服务器可以搭建多个有独立域名的web网站</p>
+<p>因为在物理层面上只有一台服务器，所以表面域名不同，但是IP地址是相同的。所以在发送HTTP请求时，需要在host里完整指明主机名或者域名的URI</p>
+</li>
+<li><p>数据转发程序：代理，网关，隧道</p>
+<p>代理：</p>
+<p>1）是否使用缓存：缓存代理 Caching Proxy，接收第一次资源请求时，将资源副本（缓存）保存在代理服务器上。如果下次还有相同请求，直接发送副本，就不用从源服务器上再次获取资源了。</p>
+<p>2）是否修改报文：透明代理 Transparent Proxy，不对报文进行修改。</p>
+<p>网关：</p>
+<p>和代理很像，可以使用网关提高通行安全（在客户端和网关的通信间进行加密）</p>
+<p>隧道：<br>本身不会解析HTTP请求，但是会使用SSH等加密手段确保通信等安全。</p>
+</li>
+<li><p>缓存</p>
+<p>可以有效减少对源服务器资源请求的次数。</p>
+<p>有效期：<a href="https://leetcode.com/problems/lru-cache/" target="_blank" rel="noopener">LRU Cache</a></p>
+<p>位置：缓存服务器，客户端（临时网络文件）</p>
+</li>
+<li><p>HTTP首部</p>
+<p>HTTP/1.1规范47种首部字段，共四类：general header fields, request header fields, response header fields, Entity header fields.</p>
+<p>非规范首部字段有: cookie, set-cookie, content-deposition</p>
+<p>general header fields: Both of requirement message and response message will use this part</p>
+<p>a. cache-control: </p>
+</li>
+<li><p>为cookie服务的首部字段：</p>
+<p>Set-cookie: 开始状态管理所使用的cookie信息</p>
+<p>cookie: 服务器接收到的cookie信息</p>
+</li>
+<li><p>其他首部字段：</p>
+<p>X-Frame-Options: 控制网站内容在其他网站frame标签内显示的问题，防止点击劫持</p>
+<p>X-XSS-Protection: 针对跨站脚步攻击(XSS)的一种策略</p>
+<p>DNT (do not track)：拒绝个人信息被收集，防止精准投放</p>
+<p>P3P: 保护用户隐私。</p>
+</li>
+<li><p>HTTP 的缺点</p>
+<ol>
+<li><p>不验证用户身份：可能遭遇伪装 lack of authentication</p>
+<p>解决方法：查明对手证书SSL</p>
+</li>
+<li><p>使用明文传输：可能会被窃取 Clear (plain) text transmission</p>
+<p>使用抓包工具 Wireshark就可以进行解析</p>
+<p>解决方法：通信加密（Secure Socket Layer + Transport Layer Security），内容加密</p>
+</li>
+<li><p>无法证明报文完整性：被篡改也不知道 </p>
+<p>解决方法MD5和SHA-1等散列值校验方法</p>
+<p>使用数字签名 Digital Signature</p>
+</li>
+</ol>
+</li>
+<li><p>HTTPS = HTTP + 加密 + 认证 + 完整性保护</p>
+<p>HTTPS只是将HTTP的通信接口用SSL和TLS协议代替了</p>
+<p><img src="https://imgur.com/C3vantT.png" alt="image-20191104205811275"></p>
+</li>
+<li><p>SSL的加密方式 公开密钥加密（public key cryptography）</p>
+<p>加密方式是公开的，密钥是保密的，如果使用一把密钥进行加密时，仍然有密钥被窃取的风险</p>
+<p>对称密钥Symmetric-key algorithm</p>
+<p>所以使用两把密钥进行公开密钥加密：使用一对非对称密钥，一把叫private key，一把叫public key</p>
+<p>HTTPS采用两种方式的混合加密</p>
+</li>
+<li><p>验证访问用户的身份 authentication</p>
+<p>你说你是ueno并不能代表你就是ueno，所以就需要核对一些只有访问者自己才知道的信息（取快递时问你电话号码）。</p>
+<p>HTTP使用的认证方式：</p>
+<ol>
+<li><p>Basic认证：<a href="https://juejin.im/entry/5ac175baf265da239e4e3999" target="_blank" rel="noopener">here</a></p>
+<p>过程：客户端发送访问请求 –&gt; 服务器返回401要求身份验证 –&gt; 客户端发送用户名：密码以base64编码处理 –&gt; 服务器返回成功200</p>
+<p>缺点：1. 因为base64不是加密编码，所以还是会有信息被盗的风险。2. 无法实现认证注销</p>
+</li>
+<li><p>DIGEST认证：采用质询码nonce进行认证。nonce随机产生</p>
+</li>
+<li><p>SSL客户端验证：使用客户端证书client certificate 进行的验证</p>
+<p>过程：事先分发证书，客户端发送访问请求 –&gt; 服务器发送 certificate request报文 –&gt; 客户端发送 client certificate –&gt; 服务器验证</p>
+</li>
+<li><p>基于表单 credential 的认证：各种网站的登录界面</p>
+</li>
+</ol>
+</li>
+<li><p>Session and Cookie</p>
+<p>过程：客户端发送用户ID和密码 –&gt; 服务器身份验证，然后将 Session ID 和用户认证状态绑定，向客户端返回响应时会把 Session ID 放在 Set Cookie里 —&gt; 客户端接收后，保存Cookie到本地，里面的Session ID也就自动保存了，下次就自动发送给服务器，然后服务器端就可以验证 Session ID</p>
+</li>
+<li><p>密码加盐 salt（减少密码特征，防止用密码特征库破解），再hash，可以用来保存用户名和密码。</p>
+</li>
+<li><p>Ajax (Asynchronous JavaScript and XML) 利用JavaScript and DOM 实现局部网页更新</p>
+<p>why：Facebook的内容更新，不可能每次都更新整个页面。所以需要Ajax进行局部更新</p>
+<p><img src="https://imgur.com/idjqEtS.jpg" alt="Imgur"></p>
+</li>
+<li><p>Comet 通过延迟应答，实现服务器端向客户端发送更新。可以实现实时更新，但是为了维持连接会消耗更多资源<img src="https://imgur.com/812yZOs.jpg" alt="image-20191105122357111" style="zoom:40%;"></p>
+</li>
+<li><p>SPDY协议</p>
+<p>为了在协议级别消除HTTP的瓶颈，在TCP/IP的应用层与运输层之间加入会话层进行运作</p>
+<img src="https://imgur.com/bEOH1BZ.jpg" alt="image-20191105122619686" style="zoom:40%;">
+</li>
+<li><p>使用浏览器进行全双工通信的WebSocket</p>
+<p>可以调用WebSocket API实现协议下的全双工通信。</p>
+</li>
+<li><p>HTML (HyperText Markup Language)</p>
+<p>CSS (Cascading Style Sheets)</p>
+<p>DOM (Document Object Model)</p>
+<p>CGI (Common Gateway Interface)</p>
+<p>XML (eXtensible Markup Language): 用标签分割而成的树形结构，更容易对数据进行读取</p>
+<p>JSON (JavaScript Object Notation): </p>
+</li>
+</ol>
 
       
     </div>
@@ -443,7 +577,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+            <a href="/tags/HTTP/" rel="tag"># HTTP</a>
           
         </div>
       
@@ -456,8 +590,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/LeetCode-739-Daily-Temperature.html" rel="next" title="LeetCode 739 Daily Temperature">
-                <i class="fa fa-chevron-left"></i> LeetCode 739 Daily Temperature
+              <a href="/DP动态规划的一些想法 + Leetcode120,213 Solution.html" rel="next" title="DP动态规划的一些想法 + Leetcode120,213 Solution">
+                <i class="fa fa-chevron-left"></i> DP动态规划的一些想法 + Leetcode120,213 Solution
               </a>
             
           </div>
@@ -465,10 +599,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/二叉树的深度遍历（前序，中序，后序）和广度遍历（层次遍历）以及 Morris Traversal.html" rel="prev" title="二叉树的深度遍历（前序，中序，后序）和广度遍历（层次遍历）以及 Morris Traversal">
-                二叉树的深度遍历（前序，中序，后序）和广度遍历（层次遍历）以及 Morris Traversal <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -526,17 +656,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -616,22 +737,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Question-here"><span class="nav-number">1.</span> <span class="nav-text">Question: here</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">1.1.</span> <span class="nav-text">Example:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#递归-Recursion"><span class="nav-number">2.1.</span> <span class="nav-text">递归 Recursion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#终点："><span class="nav-number">2.1.1.</span> <span class="nav-text">终点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自身调用部分："><span class="nav-number">2.1.2.</span> <span class="nav-text">自身调用部分：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Final-Code"><span class="nav-number">3.</span> <span class="nav-text">Final Code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
