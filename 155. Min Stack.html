@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="Algorithm算法,">
+  <meta name="keywords" content="LeetCode,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="I encounter this ‘cut and paste’ in my algorithm course, so I searched some information to and found this explaination is good. 这里解释的很好，简单来说，当你想用证明一些算法（大多数情况是动态规划和贪心算法）的正确性时就可以利用矛盾法contradiction和复制粘贴大">
-<meta name="keywords" content="Algorithm算法">
+<meta name="description" content="\155. Min Stack Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.  push(x) – Push element x onto stack. pop() – Removes the element on top of the stack.">
+<meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="What is &#39;cut and paste&#39; in proving algorithm 算法证明中的‘复制粘贴法’到底是啥">
-<meta property="og:url" content="https://t123456ll.github.io/what is 'cut and paste' in proving algorithm.html">
+<meta property="og:title" content="155. Min Stack">
+<meta property="og:url" content="https://t123456ll.github.io/155. Min Stack.html">
 <meta property="og:site_name" content="Shuolin&#39;s Blog">
-<meta property="og:description" content="I encounter this ‘cut and paste’ in my algorithm course, so I searched some information to and found this explaination is good. 这里解释的很好，简单来说，当你想用证明一些算法（大多数情况是动态规划和贪心算法）的正确性时就可以利用矛盾法contradiction和复制粘贴大">
+<meta property="og:description" content="\155. Min Stack Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.  push(x) – Push element x onto stack. pop() – Removes the element on top of the stack.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-20T00:57:45.754Z">
+<meta property="og:updated_time" content="2019-12-01T17:48:26.714Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="What is &#39;cut and paste&#39; in proving algorithm 算法证明中的‘复制粘贴法’到底是啥">
-<meta name="twitter:description" content="I encounter this ‘cut and paste’ in my algorithm course, so I searched some information to and found this explaination is good. 这里解释的很好，简单来说，当你想用证明一些算法（大多数情况是动态规划和贪心算法）的正确性时就可以利用矛盾法contradiction和复制粘贴大">
+<meta name="twitter:title" content="155. Min Stack">
+<meta name="twitter:description" content="\155. Min Stack Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.  push(x) – Push element x onto stack. pop() – Removes the element on top of the stack.">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://t123456ll.github.io/what is 'cut and paste' in proving algorithm.html">
+  <link rel="canonical" href="https://t123456ll.github.io/155. Min Stack.html">
 
 
 
 
 
-  <title>What is 'cut and paste' in proving algorithm 算法证明中的‘复制粘贴法’到底是啥 | Shuolin's Blog</title>
+  <title>155. Min Stack | Shuolin's Blog</title>
   
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/what is 'cut and paste' in proving algorithm.html">
+    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/155. Min Stack.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shuolin Tian">
@@ -314,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">What is 'cut and paste' in proving algorithm 算法证明中的‘复制粘贴法’到底是啥</h1>
+          <h1 class="post-title" itemprop="name headline">155. Min Stack</h1>
         
 
         <div class="post-meta">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-18T14:00:43-04:00">
-                2019-10-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-01T12:28:08-05:00">
+                2019-12-01
               </time>
             
 
@@ -345,8 +345,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/what is 'cut and paste' in proving algorithm.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/what is 'cut and paste' in proving algorithm.html" itemprop="commentCount"></span>
+                <a href="/155. Min Stack.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/155. Min Stack.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -379,16 +379,31 @@
       
 
       
-        <p>I encounter this ‘cut and paste’ in my algorithm course, so I searched some information to and found <a href="https://stackoverflow.com/questions/9553162/what-is-the-cut-and-paste-proof-technique" target="_blank" rel="noopener">this explaination</a> is good.</p>
-<p><a href="https://stackoverflow.com/questions/9553162/what-is-the-cut-and-paste-proof-technique" target="_blank" rel="noopener">这里</a>解释的很好，简单来说，当你想用证明一些算法（大多数情况是动态规划和贪心算法）的正确性时就可以利用矛盾法contradiction和复制粘贴大法cut and paste。因为动态规划或贪心算法都是建立在取最优结果的基础上完成下一步的计算，所以你需要假设我们其中某一步不采用前面的最优结果也可以达到最优的效果，那我们就先cut掉某一步的最优结果，将次优结果paste上去，从而进行推导，得到我们想要的contradiction就大功告成证明成功。</p>
+        <p>\155. Min Stack</p>
+<p>Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.</p>
+<ul>
+<li>push(x) – Push element x onto stack.</li>
+<li>pop() – Removes the element on top of the stack.</li>
+<li>top() – Get the top element.</li>
+<li>getMin() – Retrieve the minimum element in the stack.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MinStack minStack = new MinStack();</span><br><span class="line">minStack.push(-2);</span><br><span class="line">minStack.push(0);</span><br><span class="line">minStack.push(-3);</span><br><span class="line">minStack.getMin();   --&gt; Returns -3.</span><br><span class="line">minStack.pop();</span><br><span class="line">minStack.top();      --&gt; Returns 0.</span><br><span class="line">minStack.getMin();   --&gt; Returns -2.</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
 
-<blockquote>
-<p>The term “cut and paste” shows up in algorithms sometimes when doing dynamic programming (and other things too, but that is where I first saw it). The idea is that in order to use dynamic programming, the problem you are trying to solve probably has some kind of underlying redundancy. You use a table or similar technique to avoid solving the same optimization problems over and over again. Of course, before you start trying to use dynamic programming, it would be nice to prove that the problem has this redundancy in it, otherwise you won’t gain anything by using a table. This is often called the “optimal subproblem” property (e.g., in CLRS).</p>
-</blockquote>
-<blockquote>
-<p>The “cut and paste” technique is a way to prove that a problem has this property. In particular, you want to show that when you come up with an optimal solution to a problem, you have necessarily used optimal solutions to the constituent subproblems. The proof is by contradiction. Suppose you came up with an optimal solution to a problem by using suboptimal solutions to subproblems. Then, if you were to replace (“cut”) those suboptimal subproblem solutions with optimal subproblem solutions (by “pasting” them in), you would improve your optimal solution. But, since your solution was optimal by assumption, you have a contradiction. There are some other steps involved in such a proof, but that is the “cut and paste” part.</p>
-</blockquote>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h2><p>虽然这是一道简单题，但是并不简单。</p>
+<ol>
+<li>python</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        initialize your data structure here.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.stack = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self, x: int)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        self.stack.append(x)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        self.stack.pop()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">top</span><span class="params">(self)</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> self.stack:</span><br><span class="line">            <span class="keyword">return</span> self.stack[<span class="number">-1</span>] </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getMin</span><span class="params">(self)</span> -&gt; int:</span></span><br><span class="line">        res = self.stack[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(self.stack)):</span><br><span class="line">            res = min(res, self.stack[i])</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<p>这是最容易实现和想的一个方法，但是当stack存入太多item的时候，getMin将变得十分耗时，起码是O(n)的时间复杂度。如何解决？我们不如换个思路，当加入item的时候就记录下最小值。这里用到了动态规划的思想，最小值是，前一个数的最小值和当前数做比较来获得的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        initialize your data structure here.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.stack = []</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self, x: int)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        self.stack.append((x, min(x, self.getMin())))</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        self.stack.pop()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">top</span><span class="params">(self)</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> self.stack:</span><br><span class="line">            <span class="keyword">return</span> self.stack[<span class="number">-1</span>][<span class="number">0</span>] </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getMin</span><span class="params">(self)</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> self.stack:</span><br><span class="line">            <span class="keyword">return</span> self.stack[<span class="number">-1</span>][<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">return</span> float(<span class="string">'inf'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        initialize your data structure here.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.stack = []</span><br><span class="line">        self.minNum = float(<span class="string">'inf'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self, x: int)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        self.minNum = min(x, self.minNum)</span><br><span class="line">        self.stack.append([x, self.minNum])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        self.stack.pop()[<span class="number">-1</span>]</span><br><span class="line">        <span class="comment"># after poping, we need to update minNum</span></span><br><span class="line">        <span class="keyword">if</span> self.stack: self.minNum = self.stack[<span class="number">-1</span>][<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">else</span>: self.minNum = float(<span class="string">'inf'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">top</span><span class="params">(self)</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> self.stack:</span><br><span class="line">            <span class="keyword">return</span> self.stack[<span class="number">-1</span>][<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">else</span>: <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getMin</span><span class="params">(self)</span> -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> self.stack: </span><br><span class="line">            <span class="keyword">return</span> self.stack[<span class="number">-1</span>][<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">else</span>:<span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></table></figure>
+
+<p>和上面的异曲同工，但是没有调用内部函数</p>
 
       
     </div>
@@ -435,7 +450,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Algorithm算法/" rel="tag"># Algorithm算法</a>
+            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
           
         </div>
       
@@ -448,8 +463,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/看缠中说禅博客有感.html" rel="next" title="看缠中说禅博客有感">
-                <i class="fa fa-chevron-left"></i> 看缠中说禅博客有感
+              <a href="/215. Kth Largest Element in an Array.html" rel="next" title="215. Kth Largest Element in an Array">
+                <i class="fa fa-chevron-left"></i> 215. Kth Largest Element in an Array
               </a>
             
           </div>
@@ -458,8 +473,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Minimum Spanning Trees(MST), Kruskal and Prim algorithm.html" rel="prev" title="Minimum Spanning Trees(MST), Kruskal and Prim algorithm">
-                Minimum Spanning Trees(MST), Kruskal and Prim algorithm <i class="fa fa-chevron-right"></i>
+              <a href="/1114. Print in Order.html" rel="prev" title="1114. Print in Order">
+                1114. Print in Order <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -521,8 +536,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -602,6 +626,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.</span> <span class="nav-text">Solution:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
