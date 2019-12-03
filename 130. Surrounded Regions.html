@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta name="google-site-verification" content="jD2tOCgqSJ7XOORX5IMWuvviyixgsWeSuOX0dm8WLm4">
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="LeetCode,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Medium Given a 2D board containing &amp;#39;X&amp;#39; and &amp;#39;O&amp;#39; (the letter O), capture all regions surrounded by &amp;#39;X&amp;#39;. A region is captured by flipping all &amp;#39;O&amp;#39;s into &amp;#39;X&amp;#39;s in tha">
+<meta name="keywords" content="LeetCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="130. Surrounded Regions">
+<meta property="og:url" content="https://t123456ll.github.io/130. Surrounded Regions.html">
+<meta property="og:site_name" content="Shuolin&#39;s Blog">
+<meta property="og:description" content="Medium Given a 2D board containing &amp;#39;X&amp;#39; and &amp;#39;O&amp;#39; (the letter O), capture all regions surrounded by &amp;#39;X&amp;#39;. A region is captured by flipping all &amp;#39;O&amp;#39;s into &amp;#39;X&amp;#39;s in tha">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-12-03T01:44:16.105Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="130. Surrounded Regions">
+<meta name="twitter:description" content="Medium Given a 2D board containing &amp;#39;X&amp;#39; and &amp;#39;O&amp;#39; (the letter O), capture all regions surrounded by &amp;#39;X&amp;#39;. A region is captured by flipping all &amp;#39;O&amp;#39;s into &amp;#39;X&amp;#39;s in tha">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://t123456ll.github.io/130. Surrounded Regions.html">
+
+
+
+
+
+  <title>130. Surrounded Regions | Shuolin's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+  <div id="aplayer"></div>
+  <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+  <script type="text/javascript" src="/dist/music.js"></script>
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+  <a href="https://github.com/t123456ll">
+    <img style="position: absolute; top: 0;
+    right: 0; border: 0;" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149" alt="Fork me on GitHub" data-canonical-></a>
+
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner">
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Shuolin's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">动手又动脑，才能有创造</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            Sitemap
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-like">
+          <a href="/like/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-gratipay"></i> <br>
+            
+            Like
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/130. Surrounded Regions.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shuolin Tian">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Shuolin's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">130. Surrounded Regions</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-02T20:29:16-05:00">
+                2019-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/130. Surrounded Regions.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/130. Surrounded Regions.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Medium</p>
+<p>Given a 2D board containing <code>&#39;X&#39;</code> and <code>&#39;O&#39;</code> (<strong>the letter O</strong>), capture all regions surrounded by <code>&#39;X&#39;</code>.</p>
+<p>A region is captured by flipping all <code>&#39;O&#39;</code>s into <code>&#39;X&#39;</code>s in that surrounded region.</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">X X X X</span><br><span class="line">X O O X</span><br><span class="line">X X O X</span><br><span class="line">X O X X</span><br></pre></td></tr></table></figure>
+
+<p>After running your function, the board should be:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">X X X X</span><br><span class="line">X X X X</span><br><span class="line">X X X X</span><br><span class="line">X O X X</span><br></pre></td></tr></table></figure>
+
+<p><strong>Explanation:</strong></p>
+<p>Surrounded regions shouldn’t be on the border, which means that any <code>&#39;O&#39;</code> on the border of the board are not flipped to <code>&#39;X&#39;</code>. Any <code>&#39;O&#39;</code> that is not on the border and it is not connected to an <code>&#39;O&#39;</code> on the border will be flipped to <code>&#39;X&#39;</code>. Two cells are connected if they are adjacent cells connected horizontally or vertically</p>
+<a id="more"></a>
+
+<p>首先这题让我想到了数海岛那道题，同样都需要找联通的图案，所以很自然就想到需要dfs来进行联通的遍历，但是由于dfs必然会重复遍历一些点，所以就需要<code>visit</code>来记录哪些点已经遍历过了。</p>
+<p>首先，根据观察可以发现，只有边上的<code>O</code>或者是和边上<code>O</code>连起来的<code>O</code>才不会被变成<code>X</code>。所以我的思路很简单，就是遍历除边上以外的<code>O</code>，再通过dfs查找他是否于边上的<code>O</code>连着。但是时间复杂度一想就很高。</p>
+<p>然后我想到利用<code>visit</code>在dfs的过程中就标记好联通的<code>O</code>然后一起改成<code>X</code>，这部分代码暂定</p>
+<p>最后看了<a href="https://leetcode.wang/leetcode-130-Surrounded-Regions.html" target="_blank" rel="noopener">别人的思路</a>。感觉很有道理。</p>
+<p><em>解法一是从当前节点做 <code>DFS</code> ，然后看它是否能到达边界的 <code>O</code>。那么我们能不能把思路逆转过来呢？从边界的 <code>O</code> 做 <code>DFS</code>，然后把遇到的 <code>O</code> 都标记一下，这些 <code>O</code> 就是可以连通到边界的。然后把边界的所有的 <code>O</code> 都做一次 <code>DFS</code> ，把 <code>DFS</code> 过程的中的 <code>O</code> 做一下标记。最后我们只需要遍历节点，把没有标记过的 <code>O</code> 改成 <code>X</code> 就可以了。标记的话，我们可以用一个 <code>visited</code> 二维数组，把访问过的置为 <code>true</code> 。</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">solve</span><span class="params">(self, board: List[List[str]])</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Do not return anything, modify board in-place instead.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> board: <span class="keyword">return</span></span><br><span class="line">        r = len(board)</span><br><span class="line">        c = len(board[<span class="number">0</span>])</span><br><span class="line">        visit = [[<span class="literal">False</span>]*c <span class="keyword">for</span> i <span class="keyword">in</span> range(r)] <span class="comment"># record if this spot has been visited</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, r):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, c):</span><br><span class="line">                <span class="keyword">if</span> (i == <span class="number">0</span> <span class="keyword">or</span> i == r<span class="number">-1</span> <span class="keyword">or</span> j == <span class="number">0</span> <span class="keyword">or</span> j == c<span class="number">-1</span>):</span><br><span class="line">                    <span class="keyword">if</span> board[i][j] == <span class="string">'O'</span> <span class="keyword">and</span> <span class="keyword">not</span> visit[i][j]:</span><br><span class="line">                        self.dfs(i, j, visit, board)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, r):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, c):</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> visit[i][j] <span class="keyword">and</span> board[i][j] == <span class="string">'O'</span>:</span><br><span class="line">                    board[i][j] = <span class="string">'X'</span></span><br><span class="line">                        </span><br><span class="line">                    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(self, i, j, visit, board)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> (i&lt;len(board) <span class="keyword">and</span> i&gt;=<span class="number">0</span> <span class="keyword">and</span> j&lt;len(board[<span class="number">0</span>]) <span class="keyword">and</span> j&gt;=<span class="number">0</span>):</span><br><span class="line">            <span class="keyword">if</span> board[i][j] == <span class="string">"O"</span> <span class="keyword">and</span> <span class="keyword">not</span> visit[i][j]: </span><br><span class="line">              <span class="comment"># notic here, without not visit, we can not reach to the recursion end</span></span><br><span class="line">                visit[i][j] = <span class="literal">True</span></span><br><span class="line">                self.dfs(i+<span class="number">1</span>,j,visit,board)</span><br><span class="line">                self.dfs(i,j+<span class="number">1</span>,visit,board)</span><br><span class="line">                self.dfs(i<span class="number">-1</span>,j,visit,board)</span><br><span class="line">                self.dfs(i,j<span class="number">-1</span>,visit,board)</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            <span class="keyword">else</span>: <span class="comment"># == "X"</span></span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">else</span>: <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+
+<p>同样参考了他的优化改良思路。直接在board上记录，不需要visit</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">solve</span><span class="params">(self, board: List[List[str]])</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Do not return anything, modify board in-place instead.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> board: <span class="keyword">return</span></span><br><span class="line">        r = len(board)</span><br><span class="line">        c = len(board[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, r):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, c):</span><br><span class="line">                <span class="keyword">if</span> (i == <span class="number">0</span> <span class="keyword">or</span> i == r<span class="number">-1</span> <span class="keyword">or</span> j == <span class="number">0</span> <span class="keyword">or</span> j == c<span class="number">-1</span>):</span><br><span class="line">                    <span class="keyword">if</span> board[i][j] == <span class="string">'O'</span>:</span><br><span class="line">                        self.dfs(i, j, board)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, r):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, c):</span><br><span class="line">                <span class="keyword">if</span> board[i][j] == <span class="string">'O'</span>:</span><br><span class="line">                    board[i][j] = <span class="string">'X'</span></span><br><span class="line">                <span class="keyword">if</span> board[i][j] == <span class="string">'*'</span>:</span><br><span class="line">                    board[i][j] = <span class="string">'O'</span></span><br><span class="line">                    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(self, i, j, board)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> (i&lt;len(board) <span class="keyword">and</span> i&gt;=<span class="number">0</span> <span class="keyword">and</span> j&lt;len(board[<span class="number">0</span>]) <span class="keyword">and</span> j&gt;=<span class="number">0</span>):</span><br><span class="line">            <span class="keyword">if</span> board[i][j] == <span class="string">"O"</span> :</span><br><span class="line">                board[i][j] = <span class="string">'*'</span></span><br><span class="line">                self.dfs(i+<span class="number">1</span>,j,board)</span><br><span class="line">                self.dfs(i,j+<span class="number">1</span>,board)</span><br><span class="line">                self.dfs(i<span class="number">-1</span>,j,board)</span><br><span class="line">                self.dfs(i,j<span class="number">-1</span>,board)</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            <span class="keyword">else</span>: <span class="comment"># == "X"</span></span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">else</span>: <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>UnionFind 查并集</p>
+<p>查并集是什么，可以点<a href="https://blog.csdn.net/liujian20150808/article/details/50848646" target="_blank" rel="noopener">这里</a>。虽然查并集用在这题效率并没有高多少，但是这也不失为一种简单，且容易想到的解题思路。</p>
+<p>查并集，算法如其名，两大功能就是查找（found）和合并（Union）。</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UnionFound</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, totalNode)</span>:</span></span><br><span class="line">        self.parents = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(totalNode):</span><br><span class="line">            self.parents.append(i)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">find</span><span class="params">(self, node:int)</span>:</span></span><br><span class="line">        <span class="keyword">while</span>(self.parents[node] != node):</span><br><span class="line">            self.parents[node] = self.parents[self.parents[node]]</span><br><span class="line">            node = self.parents[node]</span><br><span class="line">        <span class="keyword">return</span> node</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">union</span><span class="params">(self, node1, node2)</span>:</span></span><br><span class="line">        par1 = self.find(node1)</span><br><span class="line">        par2 = self.find(node2)</span><br><span class="line">        <span class="keyword">if</span> par1 != par2:</span><br><span class="line">            self.parents[par1] = par2 <span class="comment"># not parents[node1] = par2</span></span><br><span class="line">            </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isConnected</span><span class="params">(self, node1, node2)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.find(node1) == self.find(node2)</span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">solve</span><span class="params">(self, board: List[List[str]])</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Do not return anything, modify board in-place instead.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> board <span class="keyword">or</span> <span class="keyword">not</span> board[<span class="number">0</span>]: <span class="keyword">return</span> board</span><br><span class="line">        r = len(board)</span><br><span class="line">        c = len(board[<span class="number">0</span>])</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">node</span><span class="params">(i, j)</span>:</span> <span class="keyword">return</span> i*c + j <span class="comment"># is c not r</span></span><br><span class="line">        </span><br><span class="line">        uf = UnionFound(r * c + <span class="number">1</span>)</span><br><span class="line">        dummy = r*c </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(r):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(c):</span><br><span class="line">                <span class="keyword">if</span> board[i][j] == <span class="string">'O'</span>:</span><br><span class="line">                    <span class="keyword">if</span> i==<span class="number">0</span> <span class="keyword">or</span> j==<span class="number">0</span> <span class="keyword">or</span> i==r<span class="number">-1</span> <span class="keyword">or</span> j==c<span class="number">-1</span>:</span><br><span class="line">                        uf.union(node(i,j), dummy)</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        <span class="keyword">if</span> board[i<span class="number">-1</span>][j] == <span class="string">'O'</span>: </span><br><span class="line">                            uf.union(node(i<span class="number">-1</span>,j), node(i,j))</span><br><span class="line">                        <span class="keyword">if</span> board[i+<span class="number">1</span>][j] == <span class="string">'O'</span>: </span><br><span class="line">                            uf.union(node(i+<span class="number">1</span>,j), node(i,j))</span><br><span class="line">                        <span class="keyword">if</span> board[i][j<span class="number">-1</span>] == <span class="string">'O'</span>: </span><br><span class="line">                            uf.union(node(i,j<span class="number">-1</span>), node(i,j))</span><br><span class="line">                        <span class="keyword">if</span> board[i][j+<span class="number">1</span>] == <span class="string">'O'</span>: </span><br><span class="line">                            uf.union(node(i,j+<span class="number">1</span>), node(i,j))</span><br><span class="line">                        </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(r):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(c):</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> uf.isConnected(dummy, node(i,j)):</span><br><span class="line">                    board[i][j] = <span class="string">'X'</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    board[i][j] = <span class="string">'O'</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wechatQR.jpg" alt="Shuolin Tian wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎加我微信交流</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/123. Best Time to Buy and Sell Stock III.html" rel="next" title="123. Best Time to Buy and Sell Stock III">
+                <i class="fa fa-chevron-left"></i> 123. Best Time to Buy and Sell Stock III
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/3. Longest 3.Substring Without Repeating Characters.html" rel="prev" title="3. Longest Substring Without Repeating Characters">
+                3. Longest Substring Without Repeating Characters <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5db907b03813e726" async="async"></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Shuolin Tian">
+            
+              <p class="site-author-name" itemprop="name">Shuolin Tian</p>
+              <p class="site-description motion-element" itemprop="description">人有两个宝，双手和大脑。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/t123456ll" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:tiansl960105@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/shirley.tian.355" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.instagram.com/shirley_pia/" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shuolin Tian</span>
+
+  
+</div>
+
+
+
+  <div class="powered-by">Powered by <a rel="external nofollow" class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a rel="external nofollow" class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'o9zBKmMSp8Dq454K7bDeP15h-gzGzoHsz',
+        appKey: 'stJGu97n6TO0mXMknRVejucX',
+        placeholder: 'type your nickname and email, share your comment',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
