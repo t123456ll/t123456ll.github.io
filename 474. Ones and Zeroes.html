@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Shuolin&#39;s Blog">
 <meta property="og:description" content="Medium In the computer world, use restricted resource you have to generate maximum benefit is what we always want to pursue. For now, suppose you are a dominator of m 0s and n 1s respectively. On the">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-03T01:45:09.013Z">
+<meta property="og:updated_time" content="2019-12-03T02:04:51.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="474. Ones and Zeroes">
 <meta name="twitter:description" content="Medium In the computer world, use restricted resource you have to generate maximum benefit is what we always want to pursue. For now, suppose you are a dominator of m 0s and n 1s respectively. On the">
@@ -398,7 +398,8 @@
 
 <a id="more"></a>
 
-<p>最近在刷动态规划的题，这题思路也是动态规划，不能用贪心，因为如果你第一反应没有想到用DP来做，想得是用贪心算法来做，比如先给字符串数组排个序，让长度小的字符串在前面，然后遍历每个字符串，遇到0或者1就将对应的m和n的值减小，这种方法在有的时候是不对的，比如对于{“11”, “01”, “10”}，m=2，n=2这个例子，我们将遍历完“11”的时候，把1用完了，那么对于后面两个字符串就没法处理了，而其实正确的答案是应该组成后面两个字符串才对。</p>
+<p>最近在刷动态规划的题，<a href="https://t123456ll.github.io/DP%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95%20+%20Leetcode120,213%20Solution.html">这篇</a>文章是我写的动态规划一点想法，和大家分享一下</p>
+<p>这题思路也是动态规划，不能用贪心，因为如果你第一反应没有想到用DP来做，想得是用贪心算法来做，比如先给字符串数组排个序，让长度小的字符串在前面，然后遍历每个字符串，遇到0或者1就将对应的m和n的值减小，这种方法在有的时候是不对的，比如对于{“11”, “01”, “10”}，m=2，n=2这个例子，我们将遍历完“11”的时候，把1用完了，那么对于后面两个字符串就没法处理了，而其实正确的答案是应该组成后面两个字符串才对。</p>
 <ol>
 <li><p>动态规划：</p>
 <p>对于dp矩阵的设计和转移方程的寻找。最开始的想法是使用一维dp遍历所有strs，但是发现完完全全是不够的。而且又犯了存储信息太少的错误，根本没有利用上m，n，所以用m，n设计一个二维矩阵就水到渠成。但是问题又来了，写的时候发现如果i, j都是从小到大进行遍历的，而且我们需要 $dp[i - zeros][j - ones]$的上一轮数据，就会发现所需要的数据会被新覆盖，所以不如让其从大到小遍历，这是一个重要的小技巧。</p>
@@ -554,7 +555,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

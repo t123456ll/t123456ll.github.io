@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Shuolin&#39;s Blog">
 <meta property="og:description" content="Medium Given an integer array with all positive numbers and no duplicates, find the number of possible combinations that add up to a positive integer target. Example: 123456789101112131415nums = [1, 2">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-03T01:45:01.370Z">
+<meta property="og:updated_time" content="2019-12-03T02:05:01.940Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="377. Combination Sum IV">
 <meta name="twitter:description" content="Medium Given an integer array with all positive numbers and no duplicates, find the number of possible combinations that add up to a positive integer target. Example: 123456789101112131415nums = [1, 2">
@@ -386,6 +386,7 @@
 
 <a id="more"></a>
 
+<p>最近在刷动态规划的题，<a href="https://t123456ll.github.io/DP%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%9A%84%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95%20+%20Leetcode120,213%20Solution.html">这篇</a>文章是我写的动态规划一点想法，和大家分享一下</p>
 <p>1.dp</p>
 <p>动态规划，dp list是一个（0，target）不断增加的一维矩阵。举例子，nums = [1, 2, 3], target = 5，当amount = 1时只能使用nums里的），当amount = 2时，除了使用nums里的2，还能使用在可以构成amount = 1的情况（也就是1），因为只需在此基础上加nums里的1就可以构成2了，所以dp[2] = 2（0+1+1）。当amount = 3时，除了使用nums里的3，还能使用amount = 2，和amount = 1的情况，dp[3] = 0 + 1(自身) + 1（和为1的组合数） + 2（和为2的组合数） = 4，然后以此类推。</p>
 <p>⚠️edge case: 当target = 0时，不加任何数也是一种组合。但没有nums时，没有任何方法可以达到target。这种edge case在换硬币的题里也出现过。</p>
@@ -538,7 +539,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
