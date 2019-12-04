@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Shuolin&#39;s Blog">
 <meta property="og:description" content="二叉树是一种非常重要的数据结构，很多其它数据结构都是基于二叉树的基础演变而来的。对于二叉树，有深度遍历(DFS)和广度遍历(BFS)，深度遍历有前序(preorder)、中序(inorder)以及后序(postorder)三种遍历方法，广度遍历即我们平常所说的层次遍历。因为树的定义本身就是递归定义，因此采用递归的方法去实现树的三种遍历不仅容易理解而且代码很简洁，而对于广度遍历来说，需要其他数据结构">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-01T17:49:57.364Z">
+<meta property="og:updated_time" content="2019-12-03T02:59:34.028Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二叉树的深度遍历（前序，中序，后序）和广度遍历（层次遍历）以及 Morris Traversal">
 <meta name="twitter:description" content="二叉树是一种非常重要的数据结构，很多其它数据结构都是基于二叉树的基础演变而来的。对于二叉树，有深度遍历(DFS)和广度遍历(BFS)，深度遍历有前序(preorder)、中序(inorder)以及后序(postorder)三种遍历方法，广度遍历即我们平常所说的层次遍历。因为树的定义本身就是递归定义，因此采用递归的方法去实现树的三种遍历不仅容易理解而且代码很简洁，而对于广度遍历来说，需要其他数据结构">
@@ -326,8 +326,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-30T15:33:03-04:00">
-                2019-09-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-30T15:33:03-04:00">
+                2020-09-30
               </time>
             
 
@@ -381,44 +381,52 @@
       
         <p>二叉树是一种非常重要的数据结构，很多其它数据结构都是基于二叉树的基础演变而来的。对于二叉树，有深度遍历(DFS)和广度遍历(BFS)，深度遍历有前序(preorder)、中序(inorder)以及后序(postorder)三种遍历方法，广度遍历即我们平常所说的层次遍历。因为树的定义本身就是递归定义，因此采用递归的方法去实现树的三种遍历不仅容易理解而且代码很简洁，而对于广度遍历来说，需要其他数据结构的支撑，比如堆或者队列。</p>
 <p>那么什么是前序，中序，后序，广度遍历呢：</p>
+<p>Binary tree is a very important data structure. Many other data structures have evolved based on the basics of binary trees. For binary trees, there are depth first search (DFS) and breadth first search (BFS). DFS has three traversal methods: preorder, inorder, and postorder. BFS is the what we usually call level traversal. Because the definition of the tree itself is recursive, using the recursive method to implement the three types of traversal of the tree is not only easy to understand, but the code is very concise. For breadth traversal, it needs the support of other data structures, such as the heap or queue.</p>
+<p>So what is preorder, middle order, postorder, breadth traversal:</p>
 <a id="more"></a>
 
-<p>比如有如下一颗树：</p>
+<p>比如有如下一颗树 we have a following tree：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    1</span><br><span class="line">   / \</span><br><span class="line">  2   5</span><br><span class="line"> / \   \</span><br><span class="line">3   4   6</span><br></pre></td></tr></table></figure>
 
 <ol>
-<li><p>前序：123456</p>
+<li><p>前序 pre-order：123456</p>
 <p>根结点 —&gt; 左子树 —&gt; 右子树</p>
+<p>Root node —&gt; left node —&gt; right node</p>
 </li>
-<li><p>中序：324156</p>
+<li><p>中序 in-order：324156</p>
 <p>左子树 —&gt; 根结点 —&gt; 右子树</p>
+<p>Left node —&gt; root node —&gt; right node</p>
 </li>
-<li><p>后序：342651</p>
+<li><p>后序 post-order：342651</p>
 <p>左子树 —&gt; 右子树 —&gt; 根结点</p>
+<p>Left node —&gt; right node —&gt; root node</p>
 </li>
-<li><p>广度：125346</p>
+<li><p>广度 level-order：125346</p>
 </li>
 </ol>
 <h3 id="深度遍历"><a href="#深度遍历" class="headerlink" title="深度遍历"></a>深度遍历</h3><p>前序，中序，后序都可以通过递归来实现，而且代码比较简洁。但是还可以通过Morris traversal 来实现，至于什么是Morris traversal 请看我的<a href="https://t123456ll.github.io/LeetCode-144-Binary-Tree-Preorder-Traversal.html#more">博文</a></p>
-<h4 id="前序遍历："><a href="#前序遍历：" class="headerlink" title="前序遍历："></a><strong>前序遍历：</strong></h4><p>递归实现</p>
+<p>The pre-order, in-order and post-order can be implemented by recursion, and the code is relatively concise. But it can also be achieved through Morris traversal. As for what is Morris traversal, please see my <a href="https://t123456ll.github.io/LeetCode-144-Binary-Tree-Preorder-Traversal.html#more">blog post</a></p>
+<h4 id="前序遍历-Pre-order-traversal："><a href="#前序遍历-Pre-order-traversal：" class="headerlink" title="前序遍历 Pre-order traversal："></a><strong>前序遍历 Pre-order traversal：</strong></h4><p>递归实现 Recursion: </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">preorderTraversal1</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> </span><br><span class="line">        print(root.val)</span><br><span class="line">        self.flatten(root.left)</span><br><span class="line">        self.flatten(root.right)</span><br></pre></td></tr></table></figure>
 
 <p>Morris Traversal 版：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">preorderTraversal2</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        cur = root</span><br><span class="line">        <span class="keyword">while</span>(cur):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> cur.left:</span><br><span class="line">                print(cur.val)</span><br><span class="line">                cur = cur.right</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                prev = cur.left</span><br><span class="line">                <span class="keyword">while</span> prev.right <span class="keyword">and</span> prev.right != cur:</span><br><span class="line">                    prev = prev.right</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> prev.right:</span><br><span class="line">                    prev.right = cur</span><br><span class="line">                    print(cur.val)</span><br><span class="line">                    cur = cur.left</span><br><span class="line">                <span class="keyword">if</span> prev.right == cur:</span><br><span class="line">                    prev.right = <span class="literal">None</span></span><br><span class="line">                    cur = cur.right</span><br></pre></td></tr></table></figure>
 
-<h4 id="中序遍历："><a href="#中序遍历：" class="headerlink" title="中序遍历："></a><strong>中序遍历：</strong></h4><p>递归实现</p>
+<h4 id="中序遍历-In-order-traversal："><a href="#中序遍历-In-order-traversal：" class="headerlink" title="中序遍历 In-order traversal："></a><strong>中序遍历 In-order traversal：</strong></h4><p>递归实现 Recursion</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">inorderTraversal1</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> </span><br><span class="line">        self.flatten(root.left)</span><br><span class="line">        print(root.val)</span><br><span class="line">        self.flatten(root.right)</span><br></pre></td></tr></table></figure>
 
 <p>Morris Traversal 版：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">inorderTraversal2</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        cur = root</span><br><span class="line">        <span class="keyword">while</span>(cur):</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> cur.left:</span><br><span class="line">                print(cur.val)</span><br><span class="line">                cur = cur.right</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                prev = cur.left</span><br><span class="line">                <span class="keyword">while</span> prev.right <span class="keyword">and</span> prev.right != cur:</span><br><span class="line">                    prev = prev.right</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> prev.right:</span><br><span class="line">                    prev.right = cur</span><br><span class="line">                    cur = cur.left</span><br><span class="line">                <span class="keyword">if</span> prev.right == cur:</span><br><span class="line">                    prev.right = <span class="literal">None</span></span><br><span class="line">                    print(cur.val)</span><br><span class="line">                    cur = cur.right</span><br></pre></td></tr></table></figure>
 
-<h4 id="后序遍历："><a href="#后序遍历：" class="headerlink" title="后序遍历："></a><strong>后序遍历：</strong></h4><p>递归实现</p>
+<h4 id="后序遍历-Post-order-traversal："><a href="#后序遍历-Post-order-traversal：" class="headerlink" title="后序遍历 Post-order traversal："></a><strong>后序遍历 Post-order traversal：</strong></h4><p>递归实现 Recursion</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">postorderTraversal1</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> </span><br><span class="line">        self.flatten(root.left)</span><br><span class="line">        self.flatten(root.right)</span><br><span class="line">        print(root.val)</span><br></pre></td></tr></table></figure>
 
-<p>Morris Traversal 版有，但我懒，大家可以自行谷歌</p>
+<p>Morris Traversal 版有，但我懒，大家可以自行谷歌 Using google, I am too lazy to write.</p>
 <p>由此我们可以发现，对于递归版的前序中序后序遍历，以及morris版的前序和中序，区别只在于输出节点的位置不同。</p>
-<h3 id="广度遍历"><a href="#广度遍历" class="headerlink" title="广度遍历"></a>广度遍历</h3><p>以下两段代码都能实现广度遍历，但区别是：</p>
+<p>From this we can find that for the recursive version of the pre-order, in-order and post-order traversal, and the morris version of the pre-order and in-order, the only difference is where return the node.</p>
+<h3 id="广度遍历-BFS"><a href="#广度遍历-BFS" class="headerlink" title="广度遍历 BFS:"></a>广度遍历 BFS:</h3><p>以下两段代码都能实现广度遍历，但区别是：</p>
 <p>第一段代码的每一个while loop都是对<strong>每一个节点</strong>的操作，第二段代码的每一个while loop都是对<strong>每一层节点</strong>的操作。</p>
+<p>The following two pieces of code can achieve breadth traversal, but the difference is: Each while loop of the first piece of code is an operation on <strong>each node</strong>, and each while loop of the second piece of code is an operation on <strong>each layer of nodes</strong>.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BFS</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        cur = root</span><br><span class="line">        queue = []</span><br><span class="line">        queue.append(root)</span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            cur = queue.pop(<span class="number">0</span>)</span><br><span class="line">            print(cur.val)</span><br><span class="line">            <span class="keyword">if</span> cur.left: queue.append(cur.left)</span><br><span class="line">            <span class="keyword">if</span> cur.right: queue.append(cur.right)</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">levelTraversal</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        cur = root</span><br><span class="line">        queue = []</span><br><span class="line">        queue.append(root)</span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            size = len(queue)</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> range(size):</span><br><span class="line">                cur = queue.pop(<span class="number">0</span>)</span><br><span class="line">                print(cur.val)</span><br><span class="line">                <span class="keyword">if</span> cur.left: queue.append(cur.left)</span><br><span class="line">                <span class="keyword">if</span> cur.right: queue.append(cur.right)</span><br></pre></td></tr></table></figure>
@@ -464,8 +472,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/LeetCode-739-Daily-Temperature.html" rel="next" title="LeetCode 739 Daily Temperature">
-                <i class="fa fa-chevron-left"></i> LeetCode 739 Daily Temperature
+              <a href="/191. Number of 1 Bits.html" rel="next" title="191. Number of 1 Bits">
+                <i class="fa fa-chevron-left"></i> 191. Number of 1 Bits
               </a>
             
           </div>
@@ -474,8 +482,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/LeetCode-128-Longest-Consecutive-Sequence.html" rel="prev" title="LeetCode 128 Longest Consecutive Sequence">
-                LeetCode 128 Longest Consecutive Sequence <i class="fa fa-chevron-right"></i>
+              <a href="/实现完全二叉搜索树.html" rel="prev" title="实现完全二叉搜索树">
+                实现完全二叉搜索树 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -637,7 +645,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#深度遍历"><span class="nav-number">1.</span> <span class="nav-text">深度遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前序遍历："><span class="nav-number">1.1.</span> <span class="nav-text">前序遍历：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中序遍历："><span class="nav-number">1.2.</span> <span class="nav-text">中序遍历：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后序遍历："><span class="nav-number">1.3.</span> <span class="nav-text">后序遍历：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广度遍历"><span class="nav-number">2.</span> <span class="nav-text">广度遍历</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number"></span> <span class="nav-text">Reference</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#深度遍历"><span class="nav-number">1.</span> <span class="nav-text">深度遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前序遍历-Pre-order-traversal："><span class="nav-number">1.1.</span> <span class="nav-text">前序遍历 Pre-order traversal：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中序遍历-In-order-traversal："><span class="nav-number">1.2.</span> <span class="nav-text">中序遍历 In-order traversal：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后序遍历-Post-order-traversal："><span class="nav-number">1.3.</span> <span class="nav-text">后序遍历 Post-order traversal：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广度遍历-BFS"><span class="nav-number">2.</span> <span class="nav-text">广度遍历 BFS:</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number"></span> <span class="nav-text">Reference</span></a></li></div>
             
 
           </div>
