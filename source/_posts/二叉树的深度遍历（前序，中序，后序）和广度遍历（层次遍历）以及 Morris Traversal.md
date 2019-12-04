@@ -1,6 +1,6 @@
 ---
 title: 二叉树的深度遍历（前序，中序，后序）和广度遍历（层次遍历）以及 Morris Traversal
-date: 2019-09-30 15:33:03
+date: 2019-12-03 15:33:03
 tags: [Algorithm算法, 二叉树]
 keywords:
 description:
@@ -11,9 +11,13 @@ description:
 
 那么什么是前序，中序，后序，广度遍历呢：
 
+Binary tree is a very important data structure. Many other data structures have evolved based on the basics of binary trees. For binary trees, there are depth first search (DFS) and breadth first search (BFS). DFS has three traversal methods: preorder, inorder, and postorder. BFS is the what we usually call level traversal. Because the definition of the tree itself is recursive, using the recursive method to implement the three types of traversal of the tree is not only easy to understand, but the code is very concise. For breadth traversal, it needs the support of other data structures, such as the heap or queue.
+
+So what is preorder, middle order, postorder, breadth traversal:
+
 <!-- more -->
 
-比如有如下一颗树：
+比如有如下一颗树 we have a following tree：
 
 ```
     1
@@ -23,27 +27,35 @@ description:
 3   4   6
 ```
 
-1. 前序：123456
+1. 前序 pre-order：123456
 
    根结点 ---> 左子树 ---> 右子树
 
-2. 中序：324156
+   Root node ---> left node ---> right node
+
+2. 中序 in-order：324156
 
    左子树 ---> 根结点 ---> 右子树
 
-3. 后序：342651
+   Left node ---> root node ---> right node
+
+3. 后序 post-order：342651
 
    左子树 ---> 右子树 ---> 根结点
 
-4. 广度：125346
+   Left node ---> right node ---> root node
+
+4. 广度 level-order：125346
 
 ### 深度遍历
 
 前序，中序，后序都可以通过递归来实现，而且代码比较简洁。但是还可以通过Morris traversal 来实现，至于什么是Morris traversal 请看我的[博文](https://t123456ll.github.io/LeetCode-144-Binary-Tree-Preorder-Traversal.html#more)
 
-#### **前序遍历：**
+The pre-order, in-order and post-order can be implemented by recursion, and the code is relatively concise. But it can also be achieved through Morris traversal. As for what is Morris traversal, please see my [blog post](https://t123456ll.github.io/LeetCode-144-Binary-Tree-Preorder-Traversal.html#more)
 
-递归实现
+#### **前序遍历 Pre-order traversal：**
+
+递归实现 Recursion: 
 
 ```python
 def preorderTraversal1(self, root):
@@ -76,9 +88,9 @@ def preorderTraversal2(self, root):
                     cur = cur.right
 ```
 
-#### **中序遍历：**
+#### **中序遍历 In-order traversal：**
 
-递归实现
+递归实现 Recursion
 
 ```python
 def inorderTraversal1(self, root):
@@ -111,9 +123,9 @@ def inorderTraversal2(self, root):
                     cur = cur.right
 ```
 
-#### **后序遍历：**
+#### **后序遍历 Post-order traversal：**
 
-递归实现
+递归实现 Recursion
 
 ```python
 def postorderTraversal1(self, root):
@@ -124,15 +136,19 @@ def postorderTraversal1(self, root):
         print(root.val)
 ```
 
-Morris Traversal 版有，但我懒，大家可以自行谷歌
+Morris Traversal 版有，但我懒，大家可以自行谷歌 Using google, I am too lazy to write.
 
 由此我们可以发现，对于递归版的前序中序后序遍历，以及morris版的前序和中序，区别只在于输出节点的位置不同。
 
-### 广度遍历
+From this we can find that for the recursive version of the pre-order, in-order and post-order traversal, and the morris version of the pre-order and in-order, the only difference is where return the node.
+
+### 广度遍历 BFS:
 
 以下两段代码都能实现广度遍历，但区别是：
 
 第一段代码的每一个while loop都是对**每一个节点**的操作，第二段代码的每一个while loop都是对**每一层节点**的操作。
+
+The following two pieces of code can achieve breadth traversal, but the difference is: Each while loop of the first piece of code is an operation on **each node**, and each while loop of the second piece of code is an operation on **each layer of nodes**.
 
 ```python
 def BFS(self, root):
