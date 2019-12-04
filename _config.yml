@@ -92,3 +92,11 @@ deploy:
   type: git
   repo: https://github.com/t123456ll/t123456ll.github.io
   branch: master
+
+# Local search bar
+## Docs: http://theme-next.iissnan.com/third-party-services.html
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
