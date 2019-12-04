@@ -1712,6 +1712,35 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode 739 Daily Temperature</title>
+    <url>/LeetCode-739-Daily-Temperature.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h1 id="Question-here"><a href="#Question-here" class="headerlink" title="Question: here"></a>Question: <a href="https://leetcode.com/problems/daily-temperatures/" target="_blank" rel="noopener">here</a></h1><p>Given a list of daily temperatures T, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead.<br>For example, given the list of temperatures T = [73, 74, 75, 71, 69, 72, 76, 73], your output should be [1, 1, 4, 2, 1, 1, 0, 0].</p>
+<p>Note: The length of temperatures will be in the range [1, 30000]. Each temperature will be an integer in the range [30, 100].<br>简而言之，判断过几天天气才能回暖。</p>
+<a id="more"></a>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h1><p>首先一看到题目大家想到的方法肯定是遍历，套两层循环暴力搜索气温升高的那天，然后坐标相减得出结果。但是注意Note里面说了可能会有30000天的温度，所以这条路就被否决掉了。但是这并不代表遍历不行，转换角度从温度进行遍历就会快很多。详细可参考<a href="https://blog.csdn.net/fuxuemingzhu/article/details/79285081" target="_blank" rel="noopener">这个微博</a></p>
+<p>但是作为一个优雅的程序员，光写这种代码肯定是不行的。所以今天我们就要用堆栈stack来解决这道题。</p>
+<p>其实要我自己写我肯定也想不到要用堆栈，但是看完别人的代码后就发现用堆栈还是有一定道理的。堆栈的先进后出和pop功能可以有效的再只遍历一次的情况下得到结果。</p>
+<h2 id="堆栈-stack"><a href="#堆栈-stack" class="headerlink" title="堆栈 stack"></a>堆栈 stack</h2><p>我们以题目中给出的例子为例来讲解：[73, 74, 75, 71, 69, 72, 76, 73]。<br>我们定义一个空栈和全零的output list，然后在用for循环遍历温度的时候分别做如下处理：</p>
+<ol>
+<li><p>如果第二天的温度比当天的低，那么我们暂时还无法确定需要等多少天才能有更高的温度，所以就将当天的温度入栈</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">stack.append(i)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果第二天温度比当天的高，那么它需要等待的天数就是1（如当t=74，栈顶元素为73时）。此时我们需要更新栈顶元素对应的那天的等待时间，把结果放进output list里。即当t=74，栈顶元素为73时，其对应结果为1（output[cur] = i-cur），此时由于73已经找到结果，所以要被pop出；当t=75的时候同理</p>
+</li>
+</ol>
+<p>当t=71时，由于71&lt;75 情况1），所以我们将75入栈（此时栈内元素为75）。<br>当t=69时，由于69&lt;71 情况1），71也同理入栈（此时栈内元素为75,71）。<br>当t=72时，由于69&lt;72 情况2），所以69的对应结果为1且69找到答案被pop出栈。当前栈顶元素为71，然后71&lt;72，所以此时可以修改71对应的等待天数，即为72对应的天数索引与71对应的天数索引，然后71出栈（此时栈内元素为75）；<br>当t=76时，由于71&lt;76 情况2），结果为1，但是同时由于76大于栈顶元素75，所以修改75的等待天数，并出栈（此时栈内为空）。<br>当t=73时，由于76&gt;73 情况1）76需入栈。由于再也没有比76大的元素，并且73之后也没有元素了，所以76，73对应的等待天数就都为0了，在程序中并没有做处理。</p>
+<p><strong>注</strong>：使用enumerate可以同时获得下标i和温度t。 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for i, t in enumerate(T):</span><br></pre></td></tr></table></figure>
+
+<p>算法的空间复杂度为O(n)，时间复杂度也为O(n)，这是因为for循环里面的while循环中，每个元素最多出一次栈，所以while总的执行次数是O(n)量级的。</p>
+<h1 id="Final-Code"><a href="#Final-Code" class="headerlink" title="Final Code"></a>Final Code</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dailyTemperatures</span><span class="params">(self, T)</span>:</span></span><br><span class="line">        output = [<span class="number">0</span>] * len(T)</span><br><span class="line">        stack = []</span><br><span class="line">        <span class="keyword">for</span> i, t <span class="keyword">in</span> enumerate(T):</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> stack <span class="keyword">and</span> T[stack[<span class="number">-1</span>]] &lt; t:</span><br><span class="line">                cur = stack.pop()</span><br><span class="line">                output[cur] = i-cur</span><br><span class="line"></span><br><span class="line">            stack.append(i)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode 965 Univalued Binary Tree</title>
     <url>/LeetCode-965-Univalued-Binary-Tree.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h1 id="Question-here"><a href="#Question-here" class="headerlink" title="Question: here"></a>Question: <a href="https://leetcode.com/problems/univalued-binary-tree/" target="_blank" rel="noopener">here</a></h1><p>A binary tree is univalued if every node in the tree has the same value.<br>Return true if and only if the given tree is univalued.<br>简而言之，判断问二叉树的每个节点的值是不是都是一样的。</p>
@@ -1742,35 +1771,6 @@
 <h1 id="Final-Code"><a href="#Final-Code" class="headerlink" title="Final Code"></a>Final Code</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isUnivalTree</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">return</span> self.univalued(root)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">univalued</span><span class="params">(self, root)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root: <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">and</span> root.val != root.left.val:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> root.right <span class="keyword">and</span> root.val != root.right.val:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            result = self.univalued(root.left) <span class="keyword">and</span> self.univalued(root.right)</span><br><span class="line">            <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
 
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://blog.csdn.net/fuxuemingzhu/article/details/85385974#_46" target="_blank" rel="noopener">这里</a>和<a href="https://blog.csdn.net/chlele0105/article/details/38759593" target="_blank" rel="noopener">这里</a>是用BFS和DFS解决二叉树问题</p>
-]]></content>
-      <tags>
-        <tag>LeetCode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>LeetCode 739 Daily Temperature</title>
-    <url>/LeetCode-739-Daily-Temperature.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><h1 id="Question-here"><a href="#Question-here" class="headerlink" title="Question: here"></a>Question: <a href="https://leetcode.com/problems/daily-temperatures/" target="_blank" rel="noopener">here</a></h1><p>Given a list of daily temperatures T, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature. If there is no future day for which this is possible, put 0 instead.<br>For example, given the list of temperatures T = [73, 74, 75, 71, 69, 72, 76, 73], your output should be [1, 1, 4, 2, 1, 1, 0, 0].</p>
-<p>Note: The length of temperatures will be in the range [1, 30000]. Each temperature will be an integer in the range [30, 100].<br>简而言之，判断过几天天气才能回暖。</p>
-<a id="more"></a>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h1><p>首先一看到题目大家想到的方法肯定是遍历，套两层循环暴力搜索气温升高的那天，然后坐标相减得出结果。但是注意Note里面说了可能会有30000天的温度，所以这条路就被否决掉了。但是这并不代表遍历不行，转换角度从温度进行遍历就会快很多。详细可参考<a href="https://blog.csdn.net/fuxuemingzhu/article/details/79285081" target="_blank" rel="noopener">这个微博</a></p>
-<p>但是作为一个优雅的程序员，光写这种代码肯定是不行的。所以今天我们就要用堆栈stack来解决这道题。</p>
-<p>其实要我自己写我肯定也想不到要用堆栈，但是看完别人的代码后就发现用堆栈还是有一定道理的。堆栈的先进后出和pop功能可以有效的再只遍历一次的情况下得到结果。</p>
-<h2 id="堆栈-stack"><a href="#堆栈-stack" class="headerlink" title="堆栈 stack"></a>堆栈 stack</h2><p>我们以题目中给出的例子为例来讲解：[73, 74, 75, 71, 69, 72, 76, 73]。<br>我们定义一个空栈和全零的output list，然后在用for循环遍历温度的时候分别做如下处理：</p>
-<ol>
-<li><p>如果第二天的温度比当天的低，那么我们暂时还无法确定需要等多少天才能有更高的温度，所以就将当天的温度入栈</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">stack.append(i)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果第二天温度比当天的高，那么它需要等待的天数就是1（如当t=74，栈顶元素为73时）。此时我们需要更新栈顶元素对应的那天的等待时间，把结果放进output list里。即当t=74，栈顶元素为73时，其对应结果为1（output[cur] = i-cur），此时由于73已经找到结果，所以要被pop出；当t=75的时候同理</p>
-</li>
-</ol>
-<p>当t=71时，由于71&lt;75 情况1），所以我们将75入栈（此时栈内元素为75）。<br>当t=69时，由于69&lt;71 情况1），71也同理入栈（此时栈内元素为75,71）。<br>当t=72时，由于69&lt;72 情况2），所以69的对应结果为1且69找到答案被pop出栈。当前栈顶元素为71，然后71&lt;72，所以此时可以修改71对应的等待天数，即为72对应的天数索引与71对应的天数索引，然后71出栈（此时栈内元素为75）；<br>当t=76时，由于71&lt;76 情况2），结果为1，但是同时由于76大于栈顶元素75，所以修改75的等待天数，并出栈（此时栈内为空）。<br>当t=73时，由于76&gt;73 情况1）76需入栈。由于再也没有比76大的元素，并且73之后也没有元素了，所以76，73对应的等待天数就都为0了，在程序中并没有做处理。</p>
-<p><strong>注</strong>：使用enumerate可以同时获得下标i和温度t。 </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for i, t in enumerate(T):</span><br></pre></td></tr></table></figure>
-
-<p>算法的空间复杂度为O(n)，时间复杂度也为O(n)，这是因为for循环里面的while循环中，每个元素最多出一次栈，所以while总的执行次数是O(n)量级的。</p>
-<h1 id="Final-Code"><a href="#Final-Code" class="headerlink" title="Final Code"></a>Final Code</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dailyTemperatures</span><span class="params">(self, T)</span>:</span></span><br><span class="line">        output = [<span class="number">0</span>] * len(T)</span><br><span class="line">        stack = []</span><br><span class="line">        <span class="keyword">for</span> i, t <span class="keyword">in</span> enumerate(T):</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> stack <span class="keyword">and</span> T[stack[<span class="number">-1</span>]] &lt; t:</span><br><span class="line">                cur = stack.pop()</span><br><span class="line">                output[cur] = i-cur</span><br><span class="line"></span><br><span class="line">            stack.append(i)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure>
-
 ]]></content>
       <tags>
         <tag>LeetCode</tag>
@@ -1840,7 +1840,7 @@ Output: [1,2,3]</code></pre><p>这一题用递归很简单，遍历就行，但�
 <a id="more"></a>
 <p>南拳妈妈的歌如今听来也不落俗，方文山写的词真是把人心攥的死死的。</p>
 
-    <div id="aplayer-IoqkIPIR" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="368794" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+    <div id="aplayer-AmReCmwK" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="368794" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
 
 <p>牛肉锅贴，每次去那门口都排满人。<br><img src="https://imgur.com/3pc18aq.jpg" alt><br>梧桐树，主干道上的树龄应该快百年了。<br><img src="https://imgur.com/ZPcWFjR.jpg" alt><br>买酒的路上遇的街头歌手。等我技艺纯熟了我也要这么干。<br><img src="https://imgur.com/rDTBFml.jpg" alt><br>某个港口，明明太阳当空，却被港口的风吹冻死。<br><img src="https://imgur.com/A8L9HK3.jpg" alt><br>野餐烧烤，香肠还挺好吃<br><img src="https://imgur.com/rRHSpxY.jpg" alt><br>农场，就，很大<br><img src="https://imgur.com/UC6DD98.jpg" alt><br>都是在车里拍的，所以两张图都有横向的运动感，为了保持图片风格一致和突出这种感觉，拼接就也采用横向，同时不保留接缝。<br><img src="https://imgur.com/td5EuBP.jpg" alt><br>pan cake 还不错，berry太酸。馄饨这家也是老店，哪怕亲眼目睹恶劣的卫生环境，但每次路过还是会来吃。<br><img src="https://imgur.com/73DNzi4.jpg" alt><br>手机翻出来这两张，不同时间不同地点，但构图与内容竟然初期一致的图，于是就拿来进行拼接。本来是正常的上下拼接，但是因为两张图中间的界限不能对齐，且整体会有失衡的感觉，就考虑采用左右翻转拼接，但是这样上面的字就也跟着反了。最后灵光一现，采用上下翻转拼接，但因为界限还是对不上，所以保留中间的白色接缝。<br><img src="https://imgur.com/cOwjial.jpg" alt></p>
 ]]></content>
