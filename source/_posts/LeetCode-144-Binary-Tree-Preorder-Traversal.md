@@ -19,10 +19,14 @@ Given a binary tree, return the preorder traversal of its nodes' values.
     Output: [1,2,3]
 这一题用递归很简单，遍历就行，但因为遍历有两个常用的方法：一是递归(recursive)，二是使用栈实现的迭代版本(stack+iterative)。这两种方法都是O(n)的空间复杂度（递归本身占用stack空间或者用户自定义的stack），那但如何使空间复杂度为O（1）呢？
 
+This problem is very simple to use recursion, traversal all of them. but because there are two common methods for traversal: one is recursive, and the other is iterative version using stack implementation (stack + iterative). These two methods are both O (n) space complexity (recursion itself occupies stack space or user-defined stack), but how to make the space complexity O (1)?
+
 <!-- more -->
+
 # Solution: Morris Traversal
-参考了[这里](https://www.cnblogs.com/AnnieKim/archive/2013/06/15/MorrisTraversal.html)，和[这里](https://ghh3809.github.io/2018/08/06/morris-traversal/)，文章写的很好，可以看一看
+参考了[这里](https://www.cnblogs.com/AnnieKim/archive/2013/06/15/MorrisTraversal.html)，和[这里](https://ghh3809.github.io/2018/08/06/morris-traversal/)，文章写的很好，可以看一看。
 这是一个神奇的算法，可以解决两个问题
+
 1. 使用O(1)空间复杂度，即使用常数空间（同时时间复杂度是O(n)）；
 2. 不破坏二叉树的形状（中间过程允许改变其形状）
 

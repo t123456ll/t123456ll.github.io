@@ -14,4 +14,4 @@ Shuolin Tian is my real name, but you can call me Shirley. Because 'Shirley' and
 
 出于以后找工作考虑，学习笔记部分应该会首选英文或中英结合？其他部分就比较随意。
 
-On someday, just want to improve my coding skill on Front-end programming, I built this Blog. I felt a sense of accomplishment when building it. In the future, I wish i can keep updating and improving it.
+One day, just want to improve my coding skill on Front-end programming, I built this Blog. I felt a sense of accomplishment when building it. In the future, I wish i can keep updating and improving it.
