@@ -91,7 +91,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://imgur.com/lldvZuC.jpg">
 <meta property="og:image" content="https://imgur.com/7UJKYGT.jpg">
-<meta property="og:updated_time" content="2019-08-06T15:11:57.808Z">
+<meta property="og:updated_time" content="2019-12-05T19:15:13.915Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode 144.Binary Tree Preorder Traversal">
 <meta name="twitter:description" content="Question: hereGiven a binary tree, return the preorder traversal of its nodes’ values.简而言之，用前序输出二叉树，至于什么是前序preorder，中序inorder和后序postorder，click here Example:Input: [1,null,2,3]   1    \     2    /   3">
@@ -422,8 +422,10 @@
    /
   3
 Output: [1,2,3]</code></pre><p>这一题用递归很简单，遍历就行，但因为遍历有两个常用的方法：一是递归(recursive)，二是使用栈实现的迭代版本(stack+iterative)。这两种方法都是O(n)的空间复杂度（递归本身占用stack空间或者用户自定义的stack），那但如何使空间复杂度为O（1）呢？</p>
+<p>This problem is very simple to use recursion, traversal all of them. but because there are two common methods for traversal: one is recursive, and the other is iterative version using stack implementation (stack + iterative). These two methods are both O (n) space complexity (recursion itself occupies stack space or user-defined stack), but how to make the space complexity O (1)?</p>
 <a id="more"></a>
-<h1 id="Solution-Morris-Traversal"><a href="#Solution-Morris-Traversal" class="headerlink" title="Solution: Morris Traversal"></a>Solution: Morris Traversal</h1><p>参考了<a href="https://www.cnblogs.com/AnnieKim/archive/2013/06/15/MorrisTraversal.html" target="_blank" rel="noopener">这里</a>，和<a href="https://ghh3809.github.io/2018/08/06/morris-traversal/" target="_blank" rel="noopener">这里</a>，文章写的很好，可以看一看<br>这是一个神奇的算法，可以解决两个问题</p>
+
+<h1 id="Solution-Morris-Traversal"><a href="#Solution-Morris-Traversal" class="headerlink" title="Solution: Morris Traversal"></a>Solution: Morris Traversal</h1><p>参考了<a href="https://www.cnblogs.com/AnnieKim/archive/2013/06/15/MorrisTraversal.html" target="_blank" rel="noopener">这里</a>，和<a href="https://ghh3809.github.io/2018/08/06/morris-traversal/" target="_blank" rel="noopener">这里</a>，文章写的很好，可以看一看。<br>这是一个神奇的算法，可以解决两个问题</p>
 <ol>
 <li>使用O(1)空间复杂度，即使用常数空间（同时时间复杂度是O(n)）；</li>
 <li>不破坏二叉树的形状（中间过程允许改变其形状）</li>
@@ -502,8 +504,8 @@ Output: [1,2,3]</code></pre><p>这一题用递归很简单，遍历就行，但�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/LeetCode-965-Univalued-Binary-Tree.html" rel="prev" title="LeetCode 965 Univalued Binary Tree">
-                LeetCode 965 Univalued Binary Tree <i class="fa fa-chevron-right"></i>
+              <a href="/LeetCode-739-Daily-Temperature.html" rel="prev" title="LeetCode 739 Daily Temperature">
+                LeetCode 739 Daily Temperature <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -592,7 +594,7 @@ Output: [1,2,3]</code></pre><p>这一题用递归很简单，遍历就行，但�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -605,7 +607,7 @@ Output: [1,2,3]</code></pre><p>这一题用递归很简单，遍历就行，但�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
