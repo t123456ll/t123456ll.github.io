@@ -55,6 +55,49 @@ Output: [1,2,3]</code></pre><p>This problem is very simple to use recursion, tra
       </tags>
   </entry>
   <entry>
+    <title>如何上传博客源代码到Github分支</title>
+    <url>/%E5%A6%82%E4%BD%95%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%B0Github%E5%88%86%E6%94%AF.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>环境：本篇文章是建立在使用Mac，默认已经有github账号，和博客仓库，并且使用hexo + github page的基础上，介绍一种简单的上传博客源代码的方法。</p>
+<p>Precondition: This article is based on using a Mac, at least already has a github account, and a blog repository, and using hexo + github page, introduces a simple method to upload blog source code to your github repository.</p>
+<p>为什么这么做：很多人有疑问，我不是已经上传了（hexo d）网站到github page上去了吗？为什么还需要再传一次？首先，使用hexo d命令上传的是根据网站源码已经编译好的，网站的静态HTML文件，所以当有访问请求时，会直接来访问github page的服务器来读取这些文件，从而显示你的个人网站。所以网站源码和HTML文件是不同的。所以你也就有理由去把这部份网站源码给保存下来了，以防本地代码的丢失。</p>
+<p><strong>Why</strong>: Many people have questions, haven’t I uploaded the (hexo d) website to the github page? Why do I need to upload it again? First, the hexo d command uploads the static HTML files of the website that have been compiled according to the source code of the website, so when there is an access request, it will directly visit the server on the github page to read these files, thereby displaying your personal website . So the website source code is different from the HTML file. That is why you need to save the source code of your website to prevent the loss of local source code.</p>
+<p>如何做：两种方法，一种先在github建好分支，然后clone，第二种，在本地建立git分支，关联你的github仓库，然后上传，我这里介绍最后一种</p>
+<p>先到终端，切换到你博客的文件夹</p>
+<img src="https://imgur.com/qvCVwzq.jpg" style="zoom:50%;">
+
+<p>然后初始化git，再查看一下git 状态，发现这些都没有上传，就一顿add，commit操作</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &apos;source code&apos;</span><br></pre></td></tr></table></figure>
+
+<img src="https://imgur.com/3kcuIrN.jpg" style="zoom:50%;">
+
+<p>然后创建一个新分支，取一个名字比如 ‘source’。切换到这个分支。查看一下，现在本地已经有两个分支了。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch source</span><br><span class="line">git checkout source</span><br><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<img src="https://imgur.com/2chLshU.jpg" style="zoom:50%;">
+
+<p>然后开始关联你的github。我们注意到没有关联前，是没有远程仓库信息的，关联后就有了origin（代表远程仓库）</p>
+<img src="https://imgur.com/980ALyq.jpg" style="zoom:50%;">
+
+<img src="https://imgur.com/H4cFrVW.jpg" style="zoom:50%;">
+
+<p>在这里获取你仓库的HTTPS地址，使用下面语句进行关联</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add origin https://github.com/your/your.github.io.git</span><br></pre></td></tr></table></figure>
+
+<p>关联好后就可以推送当前分支了，注意一定要在你刚刚创建的新分支 ‘source’上</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push -u origin source</span><br></pre></td></tr></table></figure>
+
+<p>回到github上查看，发现新的分支已经自动出来了，里面就是你网站的源代码。</p>
+<img src="https://imgur.com/PzvOmgn.jpg" style="zoom:50%;">
+
+<p>当然我们也可以添加一下.gitignore，这样上传的时候git就不会去上传.gitignore里提到的这些文件。</p>
+]]></content>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>Hexo</tag>
+        <tag>Github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>二叉树的深度遍历（前序，中序，后序）和广度遍历（层次遍历）以及 Morris Traversal</title>
     <url>/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6%E9%81%8D%E5%8E%86%EF%BC%88%E5%89%8D%E5%BA%8F%EF%BC%8C%E4%B8%AD%E5%BA%8F%EF%BC%8C%E5%90%8E%E5%BA%8F%EF%BC%89%E5%92%8C%E5%B9%BF%E5%BA%A6%E9%81%8D%E5%8E%86%EF%BC%88%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86%EF%BC%89%E4%BB%A5%E5%8F%8A%20Morris%20Traversal.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>二叉树是一种非常重要的数据结构，很多其它数据结构都是基于二叉树的基础演变而来的。对于二叉树，有深度遍历(DFS)和广度遍历(BFS)，深度遍历有前序(preorder)、中序(inorder)以及后序(postorder)三种遍历方法，广度遍历即我们平常所说的层次遍历。因为树的定义本身就是递归定义，因此采用递归的方法去实现树的三种遍历不仅容易理解而且代码很简洁，而对于广度遍历来说，需要其他数据结构的支撑，比如堆或者队列。</p>
@@ -162,6 +205,8 @@ Output: [1,2,3]</code></pre><p>This problem is very simple to use recursion, tra
     <url>/191.%20Number%20of%201%20Bits.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>Easy</p>
 <p>Write a function that takes an unsigned integer and return the number of ‘1’ bits it has (also known as the <a href="http://en.wikipedia.org/wiki/Hamming_weight" target="_blank" rel="noopener">Hamming weight</a>).</p>
+<a id="more"></a>
+
 <p><strong>Example 1:</strong></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: 00000000000000000000000000001011</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: The input binary string 00000000000000000000000000001011 has a total of three &apos;1&apos; bits.</span><br></pre></td></tr></table></figure>
 
@@ -178,8 +223,6 @@ Output: [1,2,3]</code></pre><p>This problem is very simple to use recursion, tra
 <li>Note that in some languages such as Java, there is no unsigned integer type. In this case, the input will be given as signed integer type and should not affect your implementation, as the internal binary representation of the integer is the same whether it is signed or unsigned.</li>
 <li>In Java, the compiler represents the signed integers using <a href="https://en.wikipedia.org/wiki/Two's_complement" target="_blank" rel="noopener">2’s complement notation</a>. Therefore, in <strong>Example 3</strong> above the input represents the signed integer <code>-3</code>.</li>
 </ul>
-<a id="more"></a>
-
 <h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution:"></a>Solution:</h3><ol>
 <li>Counter</li>
 </ol>
@@ -1896,7 +1939,7 @@ Output: [1,2,3]</code></pre><p>这一题用递归很简单，遍历就行，但�
 <a id="more"></a>
 <p>南拳妈妈的歌如今听来也不落俗，方文山写的词真是把人心攥的死死的。</p>
 
-    <div id="aplayer-GvuiNEfE" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="368794" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+    <div id="aplayer-eYRBCtYE" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="368794" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
 
 <p>牛肉锅贴，每次去那门口都排满人。<br><img src="https://imgur.com/3pc18aq.jpg" alt><br>梧桐树，主干道上的树龄应该快百年了。<br><img src="https://imgur.com/ZPcWFjR.jpg" alt><br>买酒的路上遇的街头歌手。等我技艺纯熟了我也要这么干。<br><img src="https://imgur.com/rDTBFml.jpg" alt><br>某个港口，明明太阳当空，却被港口的风吹冻死。<br><img src="https://imgur.com/A8L9HK3.jpg" alt><br>野餐烧烤，香肠还挺好吃<br><img src="https://imgur.com/rRHSpxY.jpg" alt><br>农场，就，很大<br><img src="https://imgur.com/UC6DD98.jpg" alt><br>都是在车里拍的，所以两张图都有横向的运动感，为了保持图片风格一致和突出这种感觉，拼接就也采用横向，同时不保留接缝。<br><img src="https://imgur.com/td5EuBP.jpg" alt><br>pan cake 还不错，berry太酸。馄饨这家也是老店，哪怕亲眼目睹恶劣的卫生环境，但每次路过还是会来吃。<br><img src="https://imgur.com/73DNzi4.jpg" alt><br>手机翻出来这两张，不同时间不同地点，但构图与内容竟然初期一致的图，于是就拿来进行拼接。本来是正常的上下拼接，但是因为两张图中间的界限不能对齐，且整体会有失衡的感觉，就考虑采用左右翻转拼接，但是这样上面的字就也跟着反了。最后灵光一现，采用上下翻转拼接，但因为界限还是对不上，所以保留中间的白色接缝。<br><img src="https://imgur.com/cOwjial.jpg" alt></p>
 ]]></content>
