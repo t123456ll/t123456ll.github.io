@@ -70,7 +70,7 @@
 
 
 
-  <meta name="keywords" content="LeetCode,二叉树,Algorithm算法,">
+  <meta name="keywords" content="Algorithm算法,LeetCode,二叉树">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="实现完全二叉搜索树题意：输入元素个数、各元素的值，实现完全二叉搜索树。输入：51 2 3 4 5输出：4 2 5 1 3">
-<meta name="keywords" content="LeetCode,二叉树,Algorithm算法">
+<meta name="description" content="我们先考虑如何转换成一个BST，而不是complete BST。我们知道一个二叉搜索树在inorder的顺序下是一个递增序列，所以突破口就在于可以先将数列排序好，就相当于我们知道了树的inorder顺序，然后我们将其转化为level-order的顺序输出就可以了。那么如何转换呢？">
+<meta name="keywords" content="Algorithm算法,LeetCode,二叉树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实现完全二叉搜索树">
 <meta property="og:url" content="https://t123456ll.github.io/实现完全二叉搜索树.html">
 <meta property="og:site_name" content="Shuolin&#39;s Blog">
-<meta property="og:description" content="实现完全二叉搜索树题意：输入元素个数、各元素的值，实现完全二叉搜索树。输入：51 2 3 4 5输出：4 2 5 1 3">
+<meta property="og:description" content="我们先考虑如何转换成一个BST，而不是complete BST。我们知道一个二叉搜索树在inorder的顺序下是一个递增序列，所以突破口就在于可以先将数列排序好，就相当于我们知道了树的inorder顺序，然后我们将其转化为level-order的顺序输出就可以了。那么如何转换呢？">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-12-04T05:45:37.567Z">
+<meta property="og:updated_time" content="2019-12-05T22:22:50.839Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="实现完全二叉搜索树">
-<meta name="twitter:description" content="实现完全二叉搜索树题意：输入元素个数、各元素的值，实现完全二叉搜索树。输入：51 2 3 4 5输出：4 2 5 1 3">
+<meta name="twitter:description" content="我们先考虑如何转换成一个BST，而不是complete BST。我们知道一个二叉搜索树在inorder的顺序下是一个递增序列，所以突破口就在于可以先将数列排序好，就相当于我们知道了树的inorder顺序，然后我们将其转化为level-order的顺序输出就可以了。那么如何转换呢？">
 
 
 
@@ -397,6 +397,10 @@
           
 
           
+              <div class="post-description">
+                  我们先考虑如何转换成一个BST，而不是complete BST。我们知道一个二叉搜索树在inorder的顺序下是一个递增序列，所以突破口就在于可以先将数列排序好，就相当于我们知道了树的inorder顺序，然后我们将其转化为level-order的顺序输出就可以了。那么如何转换呢？
+              </div>
+          
 
         </div>
       </header>
@@ -414,7 +418,7 @@
         <h2 id="实现完全二叉搜索树"><a href="#实现完全二叉搜索树" class="headerlink" title="实现完全二叉搜索树"></a>实现完全二叉搜索树</h2><p>题意：输入元素个数、各元素的值，实现完全二叉搜索树。<br>输入：5<br>1 2 3 4 5<br>输出：4 2 5 1 3</p>
 <a id="more"></a>
 
-<p>我们先考虑如何转换成一个BST，而不是complete BST。我们知道一个二叉搜索树在inorder的顺序下是一个递增序列，所以突破口就在于可以先将数列排序好，就相当于我们知道了树的inorder顺序，然后我们将其转化为level-order的顺序输出就可以了。如何转换呢？可以使用递归，观察数列可以发现每次parent node都出现在数列的中间位置。如 12345，那么3就是root node（注意我们现在考虑的是二叉搜索树, 不是完全二叉搜索树）那么很容易就写出了如下递归：</p>
+<p>我们先考虑如何转换成一个BST，而不是complete BST。我们知道一个二叉搜索树在inorder的顺序下是一个递增序列，所以突破口就在于可以先将数列排序好，就相当于我们知道了树的inorder顺序，然后我们将其转化为level-order的顺序输出就可以了。那么如何转换呢？可以使用递归，观察数列可以发现每次parent node都出现在数列的中间位置。如 12345，那么3就是root node（注意我们现在考虑的是二叉搜索树, 不是完全二叉搜索树）那么很容易就写出了如下递归：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change</span><span class="params">(inorder, temp, level)</span>:</span> <span class="comment"># change in-order into pre-order</span></span><br><span class="line">    <span class="keyword">if</span> inorder:</span><br><span class="line">        midIdx = len(inorder) // <span class="number">2</span></span><br><span class="line">        temp.append([inorder[midIdx],level])</span><br><span class="line">        change(inorder[:midIdx], temp, level+<span class="number">1</span>)</span><br><span class="line">        change(inorder[midIdx+<span class="number">1</span>:], temp, level+<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 
 <p>但是我们也注意到实际输出到temp并不是level-order，因为不是按照层的顺序摆放的，而是递归顺序摆放的pre-order。需要根据level排序后才是level-order。</p>
