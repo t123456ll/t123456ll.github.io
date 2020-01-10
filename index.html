@@ -329,7 +329,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/LeetCode-144-Binary-Tree-Preorder-Traversal copy.html">
+    <link itemprop="mainEntityOfPage" href="https://t123456ll.github.io/Selenium 学习笔记.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shuolin Tian">
@@ -348,7 +348,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/LeetCode-144-Binary-Tree-Preorder-Traversal copy.html" itemprop="url">LeetCode 144.Binary Tree Preorder Traversal (English version)</a></h1>
+                <a class="post-title-link" href="/Selenium 学习笔记.html" itemprop="url">Selenium 学习笔记</a></h1>
         
 
         <div class="post-meta">
@@ -360,8 +360,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-06T23:45:25-05:00">
-                2019-12-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-10T09:36:41-05:00">
+                2020-01-10
               </time>
             
 
@@ -379,8 +379,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/LeetCode-144-Binary-Tree-Preorder-Traversal copy.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/LeetCode-144-Binary-Tree-Preorder-Traversal copy.html" itemprop="commentCount"></span>
+                <a href="/Selenium 学习笔记.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Selenium 学习笔记.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -409,22 +409,97 @@
 
       
         
-          <p>这里是英文版，中文版<a href="https://t123456ll.github.io/LeetCode-144-Binary-Tree-Preorder-Traversal.html">这里</a></p>
-<h2 id="Question-here"><a href="#Question-here" class="headerlink" title="Question: here"></a>Question: <a href="https://leetcode.com/problems/binary-tree-preorder-traversal/" target="_blank" rel="noopener">here</a></h2><p>Given a binary tree, return the preorder traversal of its nodes’ values.<br>what’s preorder，inorder and postorder，click <a href="https://en.wikipedia.org/wiki/Tree_traversal" target="_blank" rel="noopener">here</a></p>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><pre><code>Input: [1,null,2,3]
-  1
-   \
-    2
-   /
-  3
-Output: [1,2,3]</code></pre><p>This problem is very simple to use recursion, traversal all of them. but because there are two common methods for traversal: one is recursive, and the other is iterative version using stack implementation (stack + iterative). These two methods are both O (n) space complexity (recursion itself occupies stack space or user-defined stack), but how to make the space complexity O (1)?</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/LeetCode-144-Binary-Tree-Preorder-Traversal copy.html#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <h2 id="Selenium-学习笔记"><a href="#Selenium-学习笔记" class="headerlink" title="Selenium 学习笔记"></a>Selenium 学习笔记</h2><h3 id="WebDriver"><a href="#WebDriver" class="headerlink" title="WebDriver"></a>WebDriver</h3><p>What: </p>
+<ol>
+<li>each of browser has its <a href="https://selenium.dev/downloads/" target="_blank" rel="noopener">own browser driver</a></li>
+<li>each has an API maintained by the browser vendor not the selenium</li>
+<li>Drivers inplemented in same language as browser</li>
+<li>Wrapper around browser driver (封装好的，不用懂内部构造)</li>
+</ol>
+<p>Goal why</p>
+<ol>
+<li>Quickly and easily write automated test</li>
+<li>Maintain a standardized API that is user friendly</li>
+<li>Emulate actions of users</li>
+</ol>
+<p>Who:</p>
+<ol>
+<li>to test across multiple browsers and platforms</li>
+<li>a customizable and powerful framework</li>
+</ol>
+<p>How</p>
+<ol>
+<li>using client server communication</li>
+<li>a new session of browser is created, browser window is lanuched </li>
+<li>for each request of Test script, a request is sent to a Web Driver API</li>
+<li>The webDriver API interpreters the request and execute in the browser</li>
+<li>when each step completed, responses are sent to the API and the test script</li>
+</ol>
+<h3 id="WorkFlow"><a href="#WorkFlow" class="headerlink" title="WorkFlow:"></a>WorkFlow:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.openqa.selenium.chrome.ChromeDriver;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.WebDriver;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.WebElement;</span><br><span class="line"><span class="keyword">import</span> org.openqa.selenium.By;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestSample</span>  </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Set the property for webdriver.chrome.driver to be the location to your local              download of chromedriver</span></span><br><span class="line">        System.setProperty(<span class="string">"webdriver.chrome.driver"</span>, <span class="string">"/Users/meaghanlewis/Downloads/chromedriver"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Create new instance of ChromeDriver</span></span><br><span class="line">        WebDriver driver = <span class="keyword">new</span> ChromeDriver();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// And now use this to visit Google</span></span><br><span class="line">        driver.get(<span class="string">"http://www.google.com"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Find the text input element by its name</span></span><br><span class="line">        WebElement element = driver.findElement(By.name(<span class="string">"q"</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Enter something to search for</span></span><br><span class="line">        element.sendKeys(<span class="string">"Cheese!"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Now submit the form</span></span><br><span class="line">        element.submit();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Close the browser</span></span><br><span class="line">        driver.quit();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在代码中 new ChromeDriver() 时，selenium会随机挑选一个端口调用chromedriver程序，调用成功后 chromedriver 会在指定的端口启动一个服务（会有一个进程）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; &gt;tasklist | find &quot;chromedriver&quot;</span><br><span class="line">&gt; chromedriver.exe              7848 Console                    1     13,740 K</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>selenium 中使用 apache 的 commons-exec 来运行 chromedriver.exe 启动 ChromeDriver 服务<br>直接在控制台运行 chromedriver.exe 时，默认端口是9515</p>
+<p>selenium 通过指定的端口和约定的协议来和 ChromeDriver 进行通信，一个ChromeDriver可用管理多个chrome。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; &gt;tasklist | find &quot;chrome&quot;</span><br><span class="line">&gt; chromedriver.exe             14692 Console                    1     14,888 K</span><br><span class="line">&gt; chrome.exe                   20952 Console                    1     72,204 K</span><br><span class="line">&gt; chrome.exe                    7288 Console                    1      9,052 K</span><br><span class="line">&gt; chrome.exe                   15524 Console                    1     10,000 K</span><br><span class="line">&gt; chrome.exe                   13036 Console                    1     96,028 K</span><br><span class="line">&gt; chrome.exe                   11836 Console                    1     29,836 K</span><br><span class="line">&gt; chrome.exe                    2788 Console                    1     59,876 K </span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<p>selenium 中多个 WebDriver 实例对应一个 chromedriver 进程，一个 chromedriver 进程管理多个 chrome 进程。<br>一个 WebDriver 实例对应一个浏览器窗口。</p>
+<p>作者：冬瓜baba<br>链接：<a href="https://www.jianshu.com/p/31c8c9de8fcd" target="_blank" rel="noopener">https://www.jianshu.com/p/31c8c9de8fcd</a><br>来源：简书</p>
+</blockquote>
+<h3 id="接受各种自动化测试的网站"><a href="#接受各种自动化测试的网站" class="headerlink" title="接受各种自动化测试的网站"></a>接受各种自动化测试的网站</h3><p><a href="http://formy-project.herokuapp.com/" target="_blank" rel="noopener">http://formy-project.herokuapp.com/</a></p>
+<h3 id="各种测试网站元素"><a href="#各种测试网站元素" class="headerlink" title="各种测试网站元素"></a>各种测试网站元素</h3><ol>
+<li>Text and button</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">KeyboardAndMouseInput</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        System.setProperty(<span class="string">"webdriver.chrome.driver"</span>, <span class="string">"/Users/shuolintian/Downloads/chromedriver"</span>);</span><br><span class="line"></span><br><span class="line">        WebDriver driver = <span class="keyword">new</span> ChromeDriver();</span><br><span class="line"></span><br><span class="line">        driver.get(<span class="string">"https://formy-project.herokuapp.com/keypress"</span>);</span><br><span class="line"></span><br><span class="line">        WebElement name = driver.findElement(By.id(<span class="string">"name"</span>));</span><br><span class="line">        name.click();</span><br><span class="line">        name.sendKeys(<span class="string">"shoadfadf"</span>);</span><br><span class="line"></span><br><span class="line">        WebElement button = driver.findElement(By.id(<span class="string">"button"</span>));</span><br><span class="line">        button.click();</span><br><span class="line"></span><br><span class="line">        driver.quit();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>autocomplete</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Autocomplete</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line"></span><br><span class="line">        System.setProperty(<span class="string">"webdriver.chrome.driver"</span>, <span class="string">"/Users/shuolintian/Downloads/chromedriver"</span>);</span><br><span class="line"></span><br><span class="line">        WebDriver driver = <span class="keyword">new</span> ChromeDriver();</span><br><span class="line"></span><br><span class="line">        driver.get(<span class="string">"https://formy-project.herokuapp.com/autocomplete"</span>);</span><br><span class="line"></span><br><span class="line">        WebElement autocomplete = driver.findElement(By.id(<span class="string">"autocomplete"</span>));</span><br><span class="line">        autocomplete.sendKeys(<span class="string">"110 university Ave w, Waterloo, ON"</span>);</span><br><span class="line">        Thread.sleep(<span class="number">1000</span>); <span class="comment">// attention here</span></span><br><span class="line"></span><br><span class="line">        WebElement autoResult = driver.findElement(By.className(<span class="string">"pac-item"</span>));</span><br><span class="line">        autoResult.click();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        driver.quit();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果报错，就是脚本跑太快了，没有预留足够的时间让网页弹出选项。</p>
+<ol start="3">
+<li><p>Scroll to the element</p>
+<p>对于测试来说，如果要测试一个没有显示出来（需要滚动屏幕）的元素，滚动屏幕这个动作并不是必须的。因为对于网页来说，无论在不在屏幕范围内，html里都是有这个元素的。</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Scroll</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line"></span><br><span class="line">        System.setProperty(<span class="string">"webdriver.chrome.driver"</span>, <span class="string">"/Users/shuolintian/Downloads/chromedriver"</span>);</span><br><span class="line"></span><br><span class="line">        WebDriver driver = <span class="keyword">new</span> ChromeDriver();</span><br><span class="line"></span><br><span class="line">        driver.get(<span class="string">"https://formy-project.herokuapp.com/scroll"</span>);</span><br><span class="line"></span><br><span class="line">        WebElement name = driver.findElement(By.id(<span class="string">"name"</span>));</span><br><span class="line">        Actions action = <span class="keyword">new</span> Actions(driver);</span><br><span class="line">        action.moveToElement(name);</span><br><span class="line">        Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">        name.sendKeys(<span class="string">"Shuolin"</span>);</span><br><span class="line"></span><br><span class="line">        WebElement date = driver.findElement(By.id(<span class="string">"date"</span>));</span><br><span class="line">        date.sendKeys(<span class="string">"11-22-2020"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        driver.quit();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Switch to active window</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwitchToActiveWindow</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        System.setProperty(<span class="string">"webdriver.chrome.driver"</span>, <span class="string">"/Users/shuolintian/Downloads/chromedriver"</span>);</span><br><span class="line"></span><br><span class="line">        WebDriver driver = <span class="keyword">new</span> ChromeDriver();</span><br><span class="line"></span><br><span class="line">        driver.get(<span class="string">"https://formy-project.herokuapp.com/switch-window"</span>);</span><br><span class="line"></span><br><span class="line">        WebElement newTabButton = driver.findElement(By.id(<span class="string">"new-tab-button"</span>));</span><br><span class="line">        newTabButton.click();</span><br><span class="line"></span><br><span class="line">        Set&lt;String&gt; originalHandle = driver.getWindowHandles();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(String handle1: driver.getWindowHandles()) &#123;</span><br><span class="line">            driver.switchTo().window(handle1);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        driver.switchTo().window(String.valueOf(originalHandle));</span><br><span class="line"></span><br><span class="line">        driver.quit();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>switch to alert</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwitchToAlert</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        System.setProperty(<span class="string">"webdriver.chrome.driver"</span>, <span class="string">"/Users/shuolintian/Downloads/chromedriver"</span>);</span><br><span class="line"></span><br><span class="line">        WebDriver driver = <span class="keyword">new</span> ChromeDriver();</span><br><span class="line"></span><br><span class="line">        driver.get(<span class="string">"https://formy-project.herokuapp.com/switch-window"</span>);</span><br><span class="line"></span><br><span class="line">        WebElement alertButton = driver.findElement(By.id(<span class="string">"alert-button"</span>));</span><br><span class="line">        alertButton.click();</span><br><span class="line"></span><br><span class="line">        Alert alert = driver.switchTo().alert();</span><br><span class="line">        alert.accept(); <span class="comment">// accept is a method to close the alert</span></span><br><span class="line"></span><br><span class="line">        driver.quit();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li><p>JavaScript Excecuter</p>
+<p>When to use:</p>
+<ol>
+<li>When WebDriver fails to click on any element</li>
+<li>To trigger actions on a page</li>
+<li>To perform movement on a page, like scroll</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExecuteJavascript</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line"></span><br><span class="line">        System.setProperty(<span class="string">"webdriver.chrome.driver"</span>, <span class="string">"/Users/shuolintian/Downloads/chromedriver"</span>);</span><br><span class="line"></span><br><span class="line">        WebDriver driver = <span class="keyword">new</span> ChromeDriver();</span><br><span class="line"></span><br><span class="line">        driver.get(<span class="string">"https://formy-project.herokuapp.com/modal"</span>);</span><br><span class="line"></span><br><span class="line">        WebElement modalButton = driver.findElement(By.id(<span class="string">"modal-button"</span>));</span><br><span class="line">        modalButton.click();</span><br><span class="line"></span><br><span class="line">        WebElement closeButton = driver.findElement(By.id(<span class="string">"close-button"</span>));</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// the following two lines equal to closeButton.click();</span></span><br><span class="line">        JavascriptExecutor js = (JavascriptExecutor)driver;</span><br><span class="line">        js.executeScript(<span class="string">"arguments[0].click();"</span>, closeButton);</span><br><span class="line"></span><br><span class="line">        driver.quit();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Using-CSS-selector-to-find-elements"><a href="#Using-CSS-selector-to-find-elements" class="headerlink" title="Using CSS selector to find elements"></a>Using CSS selector to find elements</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 1. by Id</span><br><span class="line">driver.findElement(By.cssSelector(&quot;#idName&quot;));</span><br><span class="line">// 2. by class</span><br><span class="line">driver.findElement(By.cssSelector(&quot;.className&quot;));</span><br><span class="line">// 3. by tag</span><br><span class="line">driver.findElement(By.cssSelector(&quot;#tagName&quot;));</span><br><span class="line">// 4. by attribute</span><br><span class="line">driver.findElement(By.cssSelector(&quot;tagName[attribute=value]&quot;));</span><br><span class="line">// 5. tag+class</span><br><span class="line">driver.findElement(By.cssSelector(&quot;tagName.className&quot;));</span><br><span class="line">// 6. tag+id  #：hash/number sign</span><br><span class="line">driver.findElement(By.cssSelector(&quot;tagName#idName&quot;));</span><br><span class="line">// 7. multiple class</span><br><span class="line">driver.findElement(By.cssSelector(&quot;.className1.className2.className3&quot;));</span><br></pre></td></tr></table></figure>
+
+<h3 id="Match-Text"><a href="#Match-Text" class="headerlink" title="Match Text"></a>Match Text</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 1. by exact Match</span><br><span class="line">&lt;div id=&quot;textField&quot;&gt;</span><br><span class="line">driver.findElement(By.cssSelector(&quot;div[id=&apos;textField&apos;]&quot;));</span><br><span class="line"></span><br><span class="line">// 2. by Prefix</span><br><span class="line">&lt;div id=&quot;textField_randomId&quot;&gt;</span><br><span class="line">driver.findElement(By.cssSelector(&quot;div[id^=&apos;textField&apos;]&quot;));</span><br><span class="line"></span><br><span class="line">// 3. by suffix</span><br><span class="line">&lt;div id=&quot;randomId_textField&quot;&gt;</span><br><span class="line">driver.findElement(By.cssSelector(&quot;div[id$=&apos;textField&apos;]&quot;));</span><br><span class="line"></span><br><span class="line">// 4. by substring</span><br><span class="line">&lt;div id=&quot;123_textField_randomId&quot;&gt;</span><br><span class="line">driver.findElement(By.cssSelector(&quot;div[id*=&apos;textField&apos;]&quot;));</span><br></pre></td></tr></table></figure>
+
+<h3 id="Child-Node"><a href="#Child-Node" class="headerlink" title="Child Node"></a>Child Node</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"list"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>One<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Two<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Three<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">driver.findElement(By.cssSelector("#list li:nth-child(n)"))</span><br></pre></td></tr></table></figure>
+
+
+          
         
       
     </div>
@@ -1749,7 +1824,7 @@ Output: [1,2,3]</code></pre><p>This problem is very simple to use recursion, tra
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1828,7 +1903,7 @@ Output: [1,2,3]</code></pre><p>This problem is very simple to use recursion, tra
       <div class="footer-inner">
         
 
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+<div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
